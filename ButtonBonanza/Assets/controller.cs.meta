@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: cd54012a558e47ef6a3950a0da745159
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - surfaceObj: {fileID: 5350345364591534920, guid: f77692eac4659f3b3997951686e27126,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
