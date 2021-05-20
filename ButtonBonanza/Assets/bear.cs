@@ -31,6 +31,7 @@ public class bear : MonoBehaviour
                 laneMovement = +1;
                 StartCoroutine(laneChange());
             }
+        }
     }
     
     IEnumerator laneChange()
