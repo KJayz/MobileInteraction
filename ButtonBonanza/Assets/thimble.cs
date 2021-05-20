@@ -19,7 +19,7 @@ public class thimble : MonoBehaviour
     	if (transform.position.z <= -3)
     	{
     		int curLane = Mathf.RoundToInt(transform.position.x);
-    		int rndLane = Random.Range(-1,1);
+    		int rndLane = Random.Range(-1,2);
     		int moveLane;
     		if (curLane == 0)
     		{
