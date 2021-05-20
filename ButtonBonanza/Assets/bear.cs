@@ -6,6 +6,8 @@ public class bear : MonoBehaviour
 {
 	int lane;
 	int laneMovement;
+    float playerSpeed = 2;
+
 	Vector3 velocity = Vector3.zero;
 
     // Start is called before the first frame update
@@ -17,24 +19,27 @@ public class bear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
-        if (Input.GetKey("a") && lane >= 0)
+        if(GetComponent<Rigidbody>().velocity == Vector3.zero)
         {
-        	laneMovement = -1;
-    		StartCoroutine(laneChange());
-        }
-        if (Input.GetKey("d") && lane <= 0)
-        {
-        	laneMovement = +1;
-    		StartCoroutine(laneChange());
+            if (Input.GetKey("a") && lane >= 0)
+            {
+                laneMovement = -1;
+                StartCoroutine(laneChange());
+            }
+            if (Input.GetKey("d") && lane <= 0)
+            {
+                laneMovement = +1;
+                StartCoroutine(laneChange());
+            }
         }
     }
     
     IEnumerator laneChange()
     {
-    	yield return new WaitForSeconds(0.25f);
-        transform.position += new Vector3(laneMovement,0,0); // TODO: moving instead of teleporting
-    	lane += laneMovement;
+        GetComponent<Rigidbody>().velocity = new Vector3(laneMovement, 0, 0) * playerSpeed;
+        yield return new WaitForSeconds(1 / playerSpeed);
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        lane += laneMovement;
     	laneMovement = 0;
     }
 }
