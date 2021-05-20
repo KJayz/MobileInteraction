@@ -476,3 +476,206 @@ System memory in use after: 55,8 MB.
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1728.
 Total: 8,494692 ms (FindLiveObjects: 0,304397 ms CreateObjectMapping: 0,111760 ms MarkObjects: 7,980062 ms  DeleteObjects: 0,095711 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 560,718854 seconds.
+  path: Assets/fabricRotatedMaterial.mat
+  artifactKey: Guid(e07c5e55f0401f088b67581deb1759d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/fabricRotatedMaterial.mat using Guid(e07c5e55f0401f088b67581deb1759d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12a4db2cf040de7b12a016eb3a355760') in 0,165804 seconds
+  Import took 0,171716 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001448 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0,73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1,703 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1211 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55,7 MB.
+System memory in use after: 55,8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1732.
+Total: 3,742257 ms (FindLiveObjects: 0,482427 ms CreateObjectMapping: 0,071105 ms MarkObjects: 3,110416 ms  DeleteObjects: 0,076728 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 951,437549 seconds.
+  path: Assets/Thimble.prefab
+  artifactKey: Guid(deec2055139232a578534026a7320f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Thimble.prefab using Guid(deec2055139232a578534026a7320f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d03da8e6e7fe95f84ac919ac31d1252') in 0,113159 seconds
+  Import took 0,116519 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 33,419435 seconds.
+  path: Assets/thimble.cs
+  artifactKey: Guid(4a1ae0593674375188729df36f89330a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/thimble.cs using Guid(4a1ae0593674375188729df36f89330a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18eb297c798a5949a9b91878cb28f7bf') in 0,002679 seconds
+  Import took 0,007128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0,001165 seconds.
+  path: Assets/thimble.cs
+  artifactKey: Guid(4a1ae0593674375188729df36f89330a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/thimble.cs using Guid(4a1ae0593674375188729df36f89330a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18eb297c798a5949a9b91878cb28f7bf') in 0,003287 seconds
+  Import took 0,008083 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001389 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0,92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2,116 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55,8 MB.
+System memory in use after: 55,8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1737.
+Total: 9,839348 ms (FindLiveObjects: 0,350239 ms CreateObjectMapping: 0,128577 ms MarkObjects: 9,264298 ms  DeleteObjects: 0,093567 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,000913 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0,91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1,920 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55,8 MB.
+System memory in use after: 55,8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1740.
+Total: 3,603761 ms (FindLiveObjects: 0,199347 ms CreateObjectMapping: 0,049603 ms MarkObjects: 3,289488 ms  DeleteObjects: 0,063341 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 73,000553 seconds.
+  path: Assets/thimble.cs
+  artifactKey: Guid(4a1ae0593674375188729df36f89330a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/thimble.cs using Guid(4a1ae0593674375188729df36f89330a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '417d43a01600322daee3ffde4fcae4fb') in 0,004986 seconds
+  Import took 0,007920 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001186 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0,58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1,935 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55,8 MB.
+System memory in use after: 55,8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1743.
+Total: 5,282111 ms (FindLiveObjects: 0,301010 ms CreateObjectMapping: 0,097681 ms MarkObjects: 4,776453 ms  DeleteObjects: 0,104183 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 34,438596 seconds.
+  path: Assets/Thimble.prefab
+  artifactKey: Guid(deec2055139232a578534026a7320f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Thimble.prefab using Guid(deec2055139232a578534026a7320f89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9beff0a7743c8d2dc2fa9cc34baa1100') in 0,159906 seconds
+  Import took 0,164565 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001335 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0,68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2,025 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55,8 MB.
+System memory in use after: 55,8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1747.
+Total: 4,829232 ms (FindLiveObjects: 0,283147 ms CreateObjectMapping: 0,102076 ms MarkObjects: 4,353137 ms  DeleteObjects: 0,088550 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001391 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0,78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2,195 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,49 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55,8 MB.
+System memory in use after: 55,8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1750.
+Total: 6,373509 ms (FindLiveObjects: 0,314222 ms CreateObjectMapping: 0,114391 ms MarkObjects: 5,851951 ms  DeleteObjects: 0,090889 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001195 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0,82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2,076 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55,8 MB.
+System memory in use after: 55,8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1753.
+Total: 9,545588 ms (FindLiveObjects: 0,334610 ms CreateObjectMapping: 0,101671 ms MarkObjects: 8,939082 ms  DeleteObjects: 0,167632 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1080,022924 seconds.
+  path: Assets/thimbleMaterial.mat
+  artifactKey: Guid(3b90c4f030a144c8b91254315adc6489) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/thimbleMaterial.mat using Guid(3b90c4f030a144c8b91254315adc6489) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37609876b8d5dcdab29b79fe1463e45a') in 0,156626 seconds
+  Import took 0,162045 seconds .
+
