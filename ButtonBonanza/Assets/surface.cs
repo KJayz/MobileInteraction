@@ -18,7 +18,7 @@ public class surface : MonoBehaviour
     	transform.position -= velocity*Time.deltaTime;
     	if (transform.position.z <= -3)
     	{
-    		transform.position += new Vector3(0,0,9);
+    		transform.position += new Vector3(0,0,12);
     	}
     }
 }
