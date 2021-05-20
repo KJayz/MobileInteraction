@@ -23,9 +23,9 @@ public class bear : MonoBehaviour
     void Update()
     {
         // Reset position & speed if cube is on track again
-        if (transform.position.y < 0.26f)
+        if (transform.position.y < 0.5f)
         {
-            transform.position = new Vector3(transform.position.x, 0.26f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             Debug.Log("Reset pos");
         }
