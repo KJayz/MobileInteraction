@@ -63,4 +63,10 @@ public class bear : MonoBehaviour
         lane += laneMovement;
     	laneMovement = 0;
     }
+    
+	void OnTriggerEnter(Collider other)
+	{
+		scores.playerScore -= 10;
+		Debug.Log("Bear: Collision detected");
+	}
 }
