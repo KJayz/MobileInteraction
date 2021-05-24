@@ -11,6 +11,8 @@ public class bear : MonoBehaviour
     float jumpSpeed = 2f;
 
 	Vector3 velocity = Vector3.zero;
+	public Material bearMat; 
+	public Material bearDuckMat;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,11 @@ public class bear : MonoBehaviour
             {
                 GetComponent<Rigidbody>().velocity = Vector3.up * jumpSpeed;
             }
+            
+            if (Input.GetKey("s"))
+            {
+				StartCoroutine(duck());
+            }
         }
     }
     
@@ -62,6 +69,17 @@ public class bear : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         lane += laneMovement;
     	laneMovement = 0;
+    }
+    
+    IEnumerator duck()
+    {
+        GetComponent<MeshRenderer>().material = bearDuckMat;
+        GetComponent<BoxCollider>().size = new Vector3(8,0.075f,4.5f);
+        GetComponent<BoxCollider>().center = new Vector3(0,0,2.7f);
+        yield return new WaitForSeconds(1.5f / strafeSpeed);
+        GetComponent<MeshRenderer>().material = bearMat;
+        GetComponent<BoxCollider>().size = new Vector3(8,0.075f,9.5f);
+        GetComponent<BoxCollider>().center = new Vector3(0,0,0);
     }
     
 	void OnTriggerEnter(Collider other)
