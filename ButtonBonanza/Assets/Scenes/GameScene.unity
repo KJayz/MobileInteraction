@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 448737265}
   - component: {fileID: 448737264}
   m_Layer: 0
-  m_Name: EmptyObject
+  m_Name: GlobalValues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1595,6 +1595,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139137406}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &662736517780925820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870116, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 662736519504870126, guid: 44fb150670b9c614d94d74aa418d0781,
+        type: 3}
+      propertyPath: m_Name
+      value: HangingButtons
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44fb150670b9c614d94d74aa418d0781, type: 3}
 --- !u!1001 &7644207883841575431
 PrefabInstance:
   m_ObjectHideFlags: 0
