@@ -18,7 +18,7 @@ public class bear : MonoBehaviour
     {
     	lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
     	duckSpeed = speed;
-    	jumpSpeed = speed;
+    	jumpSpeed = 1.5f*speed;
     	strafeSpeed = 2*speed;
     }
 
