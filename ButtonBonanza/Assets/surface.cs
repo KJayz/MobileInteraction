@@ -8,6 +8,7 @@ public class surface : MonoBehaviour
 	Vector3 velocity;
     float obstacleType;
     float obstaclePos;
+    bool addPoints;
 
     GameObject thimble;
     GameObject hangingButtons;
@@ -28,16 +29,20 @@ public class surface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
-    	transform.position -= velocity*Time.deltaTime;
+        if (Mathf.RoundToInt(transform.position.z) == 1 && addPoints) // Approximately when the bear passes the obstacles
+        {
+            scores.playerScore += 10;
+            Debug.Log("Player score: " + scores.playerScore);
+            addPoints = false;
+        }
+
+        transform.position -= velocity*Time.deltaTime;
     	if (transform.position.z <= -3)
     	{
 
             transform.position += new Vector3(0, 0, 12);
             obstaclePos = Mathf.Round(Random.Range(-1f,1f));
             obstacleType = Mathf.Round(Random.Range(0f,1f));
-            Debug.Log(obstaclePos);
 
             switch (obstacleType)
             {
@@ -74,6 +79,7 @@ public class surface : MonoBehaviour
                     // wall2.transform.position = new Vector(0, wall2.transform.position.y, wall2.transform.position.z);
                     break;
             }
+            addPoints = true;
         }
     }
 
