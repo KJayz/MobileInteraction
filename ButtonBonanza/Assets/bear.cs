@@ -6,6 +6,7 @@ public class bear : MonoBehaviour
 {
 	int lane;
 	int laneMovement;
+    bool isMoving = false;
     float speed = 2f;
     float strafeSpeed, jumpSpeed, duckSpeed;
 
@@ -54,7 +55,7 @@ public class bear : MonoBehaviour
     
     void respondToInput()
     {
-        if(GetComponent<Rigidbody>().velocity == Vector3.zero)
+        if(GetComponent<Rigidbody>().velocity == Vector3.zero && !isMoving)
         {
             if (Input.GetKey("a") && lane >= 0)
             {
@@ -78,26 +79,31 @@ public class bear : MonoBehaviour
     
     IEnumerator laneChange()
     {
+        isMoving = true;
         GetComponent<Rigidbody>().velocity = new Vector3(laneMovement, 0, 0) * strafeSpeed;
         lane += laneMovement;
         yield return new WaitForSeconds(1 / strafeSpeed);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
     	laneMovement = 0;
+        isMoving = false;
     }
     
     IEnumerator jump()
     {
-    	GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.up;
+        isMoving = true;
+        GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.up;
     	GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity - jumpSpeed * Vector3.up * Time.deltaTime;
     	yield return new WaitWhile(() => transform.position.y < 1.5f);
     	GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.down;
     	GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity + jumpSpeed * Vector3.down * Time.deltaTime; 
-    	yield return new WaitWhile(() => transform.position.y > 0.5f); 
+    	yield return new WaitWhile(() => transform.position.y > 0.5f);
+        isMoving = false;
     }
     
     IEnumerator duck()
     {
-    	// bear starts ducking
+        isMoving = true;
+        // bear starts ducking
         GetComponent<MeshRenderer>().material = bearDuckMat;
         GetComponent<BoxCollider>().size = new Vector3(8,0.075f,4.5f);
         GetComponent<BoxCollider>().center = new Vector3(0,0,2.7f);
@@ -107,6 +113,7 @@ public class bear : MonoBehaviour
         GetComponent<MeshRenderer>().material = bearMat;
         GetComponent<BoxCollider>().size = new Vector3(8,0.075f,9.5f);
         GetComponent<BoxCollider>().center = new Vector3(0,0,0);
+        isMoving = false;
     }
     
 	void OnTriggerEnter(Collider other)

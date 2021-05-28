@@ -35,8 +35,8 @@ public class surface : MonoBehaviour
     	{
 
             transform.position += new Vector3(0, 0, 12);
-            obstaclePos = Mathf.Floor(Random.Range(-0.5f,1.5f));
-            obstacleType = Mathf.Floor(Random.Range(0.5f,1.5f));
+            obstaclePos = Mathf.Round(Random.Range(-1f,1f));
+            obstacleType = Mathf.Round(Random.Range(0f,1f));
             Debug.Log(obstaclePos);
 
             switch (obstacleType)
@@ -74,10 +74,7 @@ public class surface : MonoBehaviour
                     // wall2.transform.position = new Vector(0, wall2.transform.position.y, wall2.transform.position.z);
                     break;
             }
-
         }
-
-
     }
 
     void setObstacleVisible(bool visible)
