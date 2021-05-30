@@ -9,6 +9,7 @@ public class surface : MonoBehaviour
     float obstacleType;
     float obstaclePos;
     bool addPoints;
+    float timeSinceSpeedup;
 
     GameObject thimble;
     GameObject hangingButtons;
@@ -24,11 +25,20 @@ public class surface : MonoBehaviour
         // Hide obstacles (so the player isn't stuck in the middle when starting the game)
         setObstacleVisible(false);
         Random.InitState(1);
+
+        timeSinceSpeedup = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Speedup every 20s
+        if(timeSinceSpeedup + 20f < Time.time)
+        {
+            velocity += new Vector3(0, 0, 0.5f); // Verify if this speedup is doable
+            timeSinceSpeedup = Time.time;
+        }
+
         if (Mathf.RoundToInt(transform.position.z) == 1 && addPoints) // Approximately when the bear passes the obstacles
         {
             scores.playerScore += 10;
