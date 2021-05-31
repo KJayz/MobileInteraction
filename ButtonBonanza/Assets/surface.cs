@@ -24,7 +24,7 @@ public class surface : MonoBehaviour
         velocity = new Vector3(0,0,2.5f);
         // Hide obstacles (so the player isn't stuck in the middle when starting the game)
         setObstacleVisible(false);
-        Random.InitState(1);
+        Random.InitState(PlayerPrefs.GetInt("randomSeed"));
 
         timeSinceSpeedup = Time.time;
     }

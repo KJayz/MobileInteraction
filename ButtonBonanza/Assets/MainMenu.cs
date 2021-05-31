@@ -8,12 +8,14 @@ public class MainMenu : MonoBehaviour
 {
     public void loadLevel(int level)
     {
+        PlayerPrefs.SetInt("GameLevel", level);
         Debug.Log("Loading level: " + level);
         SceneManager.LoadScene("GameScene");
     }
     
     public void loadTutorialLevel(int level)
     {
+        PlayerPrefs.SetInt("TutorialLevel", level);
         Debug.Log("Loading Tutorial level: " + level);
         //SceneManager.LoadScene("TutorialGameScene");
     }
