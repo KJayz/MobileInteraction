@@ -10,14 +10,22 @@ public class bear : MonoBehaviour
     float speed = 2f;
     float strafeSpeed, jumpSpeed, duckSpeed;
 
+	// materials needed for changing back and forth to ducking bear sprite
 	public Material bearMat; 
 	public Material bearDuckMat;
+
+	// input control variables
+	public int inputMethod = 1; // (1 = swiping, 2 = tapping virtual buttons)
+    Vector2 startTouchPos; 
+    int input;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
     	lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
+    	input = 0; // (0 = none, 1 = left, 2 = right, 3 = up, 4 = down)
     	duckSpeed = speed;
     	jumpSpeed = 1.5f*speed;
     	strafeSpeed = 2*speed;
@@ -28,6 +36,15 @@ public class bear : MonoBehaviour
     {      
         // Reset position & speed, if bear's position too low or too much to one of the sizes
 		resetPosition();
+
+		// understand user's input
+		if (inputMethod == 2)
+			Debug.Log("tapping virtual buttons - input function not yet created");
+		else // inputMethod == 1
+		{
+			duckSpeed = 2*speed;
+			listenForSwipes();
+		}
 
 		// respond to user's input
         respondToInput();
@@ -53,27 +70,63 @@ public class bear : MonoBehaviour
         }
     }
     
+    void listenForSwipes() // inspired by: https://www.youtube.com/watch?v=kreI-0i_oHw
+    {
+    	// Note: not perfect yet in terms of performance...
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began) startTouchPos = touch.position;
+            
+            if (touch.phase == TouchPhase.Moved)
+            {
+            	float xMoved = startTouchPos.x - touch.position.x;
+            	float yMoved = startTouchPos.y - touch.position.y;
+            	float movedDist = Mathf.Sqrt(xMoved*xMoved + yMoved*yMoved);
+            	
+            	if (movedDist > 80f)
+            	{
+            	    bool horSwipe = Mathf.Abs(xMoved) > Mathf.Abs(yMoved);
+            		if (horSwipe && xMoved > 0) input = 1; // left swipe
+            		else if (horSwipe && xMoved < 0) input = 2; // right swipe
+            		else if (!horSwipe && yMoved < 0) input = 3; // up swipe
+            		else if (!horSwipe && yMoved > 0) input = 4; // down swipe
+            	}
+            }
+            
+            if (touch.phase == TouchPhase.Ended) startTouchPos = new Touch().position;
+        }
+    }
+    
     void respondToInput()
     {
         if(GetComponent<Rigidbody>().velocity == Vector3.zero && !isMoving)
         {
-            if (Input.GetKey("a") && lane >= 0)
+        	// input.getkeys are kept, to be able to test easily on desktop
+            if ((Input.GetKey("a") || input == 1) && lane >= 0)
             {
                 laneMovement = -1;
+                input = 0;
                 StartCoroutine(laneChange());
             }
             
-            if (Input.GetKey("d") && lane <= 0)
+            if ((Input.GetKey("d") || input == 2) && lane <= 0)
             {
                 laneMovement = 1;
+                input = 0;
                 StartCoroutine(laneChange());
             }
 
-            if (Input.GetKey("w"))
+            if (Input.GetKey("w") || input == 3)
+            {
+            	input = 0;
                 StartCoroutine(jump());
+            }
             
-            if (Input.GetKey("s"))
+            if (Input.GetKey("s") || input == 4)
+            {
+            	input = 0;
 				StartCoroutine(duck());
+			}
         }
     }
     
