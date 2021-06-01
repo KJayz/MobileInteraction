@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("inputMethod", 1);
         PlayerPrefs.SetInt("randomSeed", level);
-        Debug.Log("Loading level: " + level);
+        Debug.Log("Loading Swipe level: " + level);
         SceneManager.LoadScene("GameScene");
     }
 
@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("inputMethod", 2);
         PlayerPrefs.SetInt("randomSeed", level);
-        Debug.Log("Loading level: " + level);
+        Debug.Log("Loading Buttons level: " + level);
         SceneManager.LoadScene("GameScene");
     }
 
