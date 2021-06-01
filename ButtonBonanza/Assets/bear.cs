@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bear : MonoBehaviour
 {
@@ -15,20 +16,26 @@ public class bear : MonoBehaviour
 	public Material bearDuckMat;
 
 	// input control variables
-	public int inputMethod = 1; // (1 = swiping, 2 = tapping virtual buttons)
+	public int inputMethod = 2; // (1 = swiping, 2 = tapping virtual buttons)
     Vector2 startTouchPos; 
     int input;
-
-
+	public Button leftBtn, rightBtn, upBtn, downBtn;
+	public Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {    	
     	lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
     	input = 0; // (0 = none, 1 = left, 2 = right, 3 = up, 4 = down)
     	duckSpeed = speed;
     	jumpSpeed = 1.5f*speed;
     	strafeSpeed = 2*speed;
+    	
+    	if (inputMethod == 2) // add buttons if tapping condition
+		{
+			listenForTaps();
+			Debug.Log("tapping virtual buttons - input function not yet created");
+		}
     }
 
     // Update is called once per frame
@@ -37,10 +44,8 @@ public class bear : MonoBehaviour
         // Reset position & speed, if bear's position too low or too much to one of the sizes
 		resetPosition();
 
-		// understand user's input
-		if (inputMethod == 2)
-			Debug.Log("tapping virtual buttons - input function not yet created");
-		else // inputMethod == 1
+		// understand user's input if swiping condition
+		if (inputMethod == 1)
 		{
 			duckSpeed = 2*speed;
 			listenForSwipes();
@@ -68,6 +73,25 @@ public class bear : MonoBehaviour
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             Debug.Log("Reset pos");
         }
+    }
+    
+    public void listenForTaps() // for not-dynamic testing purposes
+    {
+    	Button leftButton = (Button) Instantiate(leftBtn);
+    	leftButton.transform.SetParent(canvas.transform, false);
+    	leftButton.onClick.AddListener(() => input = 1);
+    	
+    	Button rightButton = (Button) Instantiate(rightBtn);
+    	rightButton.transform.SetParent(canvas.transform, false);
+    	rightButton.onClick.AddListener(() => input = 2);
+    	
+    	Button upButton = (Button) Instantiate(upBtn);
+    	upButton.transform.SetParent(canvas.transform, false);
+    	upButton.onClick.AddListener(() => input = 3);
+    	
+    	Button downButton = (Button) Instantiate(downBtn);
+    	downButton.transform.SetParent(canvas.transform, false);
+    	downButton.onClick.AddListener(() => input = 4);
     }
     
     void listenForSwipes() // inspired by: https://www.youtube.com/watch?v=kreI-0i_oHw

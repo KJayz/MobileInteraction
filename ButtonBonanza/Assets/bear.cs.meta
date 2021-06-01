@@ -3,7 +3,16 @@ guid: 817e8d058e55318089d76c4fe9debe0d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bearMat: {fileID: 2100000, guid: 1e205870fb021d29b8eb54ac92ef8658, type: 2}
+  - bearDuckMat: {fileID: 2100000, guid: 12e45340a36a13d11a20074193ed800c, type: 2}
+  - leftBtn: {fileID: 4239136460059735094, guid: 06baca60027c9455ba5fa62709116dd6,
+      type: 3}
+  - rightBtn: {fileID: 7695092115757276214, guid: e366943d094cf582a910f4ac1d2f7eda,
+      type: 3}
+  - upBtn: {fileID: 5228911479619377115, guid: e6d2ff27e470f7ee8a7a87b81739b7c6, type: 3}
+  - downBtn: {fileID: 8942048988075861874, guid: 58816598e9340fff18bf7e76a45cf10a,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
