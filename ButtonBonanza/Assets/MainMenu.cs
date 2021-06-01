@@ -23,7 +23,13 @@ public class MainMenu : MonoBehaviour
         	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
         }
         
-        SceneManager.LoadScene("GameScene");
+        if (level < 10)
+        {
+            SceneManager.LoadScene("GameScene");
+        } else
+        {
+            SceneManager.LoadScene("TutorialScene");
+        }
         scores.nrPlayedLevels += 1;
 	}
 
