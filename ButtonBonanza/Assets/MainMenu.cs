@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void loadLevel(int level)
-    {
+	// NOTE: Original loadLevel function with my added code
+	public void loadLevel(int level)
+	{
         PlayerPrefs.SetInt("randomSeed", level);      
         Debug.Log("Loading level: " + level);   
         
@@ -24,12 +25,51 @@ public class MainMenu : MonoBehaviour
         
         SceneManager.LoadScene("GameScene");
         scores.nrPlayedLevels += 1;
-    }
-    
-    public void loadTutorialLevel(int level)
+	}
+
+    // Swipe Levels
+    public void loadSwipeLevel(int level)
     {
+       PlayerPrefs.SetInt("inputMethod", 1);
+       PlayerPrefs.SetInt("randomSeed", level);
+       Debug.Log("Loading Swipe level: " + level); 
+       SceneManager.LoadScene("GameScene");
+       scores.nrPlayedLevels += 1;
+    }
+
+    public void loadSwipeTutorialLevel(int level)
+    {
+        PlayerPrefs.SetInt("inputMethod", 1);
         PlayerPrefs.SetInt("randomSeed", level);
-        Debug.Log("Loading Tutorial level: " + level);
-        //SceneManager.LoadScene("TutorialGameScene");
+        Debug.Log("Loading Swipe Tutorial level: " + level);
+        SceneManager.LoadScene("TutorialScene");
+    }
+
+    // Buttons levels
+    public void loadButtonsLevel(int level)
+    {
+        PlayerPrefs.SetInt("inputMethod", 2);
+        PlayerPrefs.SetInt("randomSeed", level);
+        Debug.Log("Loading Buttons level: " + level);
+        SceneManager.LoadScene("GameScene");
+    }
+
+
+    public void loadButtonsTutorialLevel(int level)
+    {
+        PlayerPrefs.SetInt("inputMethod", 2);
+        PlayerPrefs.SetInt("randomSeed", level);
+        Debug.Log("Loading Buttons Tutorial level: " + level);
+        SceneManager.LoadScene("TutorialScene");
+    }
+
+    public void openHelp()
+    {
+        // TODO: Show help popup
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }

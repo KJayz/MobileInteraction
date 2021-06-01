@@ -23,8 +23,11 @@ public class bear : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {    	
-    	lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
+
+    {
+
+        inputMethod = PlayerPrefs.GetInt("inputMethod");
+        lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
     	input = 0; // (0 = none, 1 = left, 2 = right, 3 = up, 4 = down)
     	duckSpeed = speed;
     	jumpSpeed = 1.5f*speed;
@@ -46,7 +49,7 @@ public class bear : MonoBehaviour
 		// understand user's input if swiping condition
 		if (scores.inputMethod == 1)
 		{
-			duckSpeed = 2*speed;
+			duckSpeed = 2*speed; // Why change the duckspeed?
 			listenForSwipes();
 			Debug.Log("Swiping enabled");
 		}
