@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "547660060702",
+    "firebase_url": "https://buttonbonanza-6340e.firebaseio.com",
+    "project_id": "buttonbonanza-6340e",
+    "storage_bucket": "buttonbonanza-6340e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547660060702:android:73af0fc0bc9f111027360f",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.ButtonBonanza"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547660060702-evhvqlfji4ecr28oc17996dgdc7399c8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ2KdzrHrxhw9oQdWv3YC2I4VTgmO4fWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547660060702-evhvqlfji4ecr28oc17996dgdc7399c8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="gcm_defaultSenderId" translatable="false">547660060702</string>
+  <string name="google_storage_bucket" translatable="false">buttonbonanza-6340e.appspot.com</string>
+  <string name="project_id" translatable="false">buttonbonanza-6340e</string>
+  <string name="google_api_key" translatable="false">AIzaSyCJ2KdzrHrxhw9oQdWv3YC2I4VTgmO4fWo</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCJ2KdzrHrxhw9oQdWv3YC2I4VTgmO4fWo</string>
+  <string name="google_app_id" translatable="false">1:547660060702:android:73af0fc0bc9f111027360f</string>
+  <string name="default_web_client_id" translatable="false">547660060702-evhvqlfji4ecr28oc17996dgdc7399c8.apps.googleusercontent.com</string>
+</resources>
