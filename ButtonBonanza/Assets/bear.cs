@@ -10,48 +10,60 @@ public class bear : MonoBehaviour
     bool isMoving = false;
     float speed = 2f;
     float strafeSpeed, jumpSpeed, duckSpeed;
+    float timeSinceSpeedup;
 
-	// materials needed for changing back and forth to ducking bear sprite
-	public Material bearMat; 
+    // materials needed for changing back and forth to ducking bear sprite
+    public Material bearMat; 
 	public Material bearDuckMat;
 
 	// input control variables
+	public int inputMethod = 2; // (1 = swiping, 2 = tapping virtual buttons)
     Vector2 startTouchPos; 
     int input;
 	public Button leftBtn, rightBtn, upBtn, downBtn;
 	public Canvas canvas;
+
 
     // Start is called before the first frame update
     void Start()
 
     {
 
-        inputMethod = PlayerPrefs.GetInt("inputMethod");
+        timeSinceSpeedup = Time.timeSinceLevelLoad;
         lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
     	input = 0; // (0 = none, 1 = left, 2 = right, 3 = up, 4 = down)
     	duckSpeed = speed;
     	jumpSpeed = 1.5f*speed;
     	strafeSpeed = 2*speed;
     	
-    	if (scores.inputMethod == 2) // add buttons if tapping condition
+    	if (inputMethod == 2) // add buttons if tapping condition
 		{
 			listenForTaps();
-			Debug.Log("Tapping virtual buttons enabled");
+			Debug.Log("tapping virtual buttons - input function not yet created");
 		}
     }
 
     // Update is called once per frame
     void Update()
-    {      
+    {
+
+        // Speedup every 20s - if the level is faster, the bear needs to be able to do the same
+        if (timeSinceSpeedup + 20f < Time.time)
+        {
+            strafeSpeed += strafeSpeed * 0.10f;
+            jumpSpeed += jumpSpeed * 0.10f;
+            duckSpeed += duckSpeed * 0.10f;
+            timeSinceSpeedup = Time.time;
+        }
+
         // Reset position & speed, if bear's position too low or too much to one of the sizes
-		resetPosition();
+        resetPosition();
 
 		// understand user's input if swiping condition
-		if (scores.inputMethod == 1)
+		if (inputMethod == 1)
 		{
 			duckSpeed = 2*speed; // Why change the duckspeed?
 			listenForSwipes();
-			Debug.Log("Swiping enabled");
 		}
 
 		// respond to user's input

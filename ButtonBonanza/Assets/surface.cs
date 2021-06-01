@@ -46,7 +46,8 @@ public class surface : MonoBehaviour
         // Speedup every 20s
         if(timeSinceSpeedup + 20f < Time.time)
         {
-            velocity += new Vector3(0, 0, 0.5f); // Verify if this speedup is doable
+            // TODO: Test level & bear speeds and see which speedup rate is best for both
+            velocity += new Vector3(0, 0, velocity.z * 0.10f); // Verify if this speedup is doable - percentile increase so bear speed can increase at the same rate
             timeSinceSpeedup = Time.time;
         }
 

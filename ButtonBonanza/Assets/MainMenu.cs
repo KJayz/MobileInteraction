@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
         	if (controlType == 1) scores.inputMethod = 1;
         	else if (controlType == 2) scores.inputMethod = 2;
         }
-        else if (scores.nrPlayedLevels == 2)
+        else if (scores.nrPlayedLevels == 3) // tutorial + 2 levels
         {
         	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
         }
@@ -26,42 +26,6 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("GameScene");
         scores.nrPlayedLevels += 1;
 	}
-
-    // Swipe Levels
-    public void loadSwipeLevel(int level)
-    {
-       PlayerPrefs.SetInt("inputMethod", 1);
-       PlayerPrefs.SetInt("randomSeed", level);
-       Debug.Log("Loading Swipe level: " + level); 
-       SceneManager.LoadScene("GameScene");
-       scores.nrPlayedLevels += 1;
-    }
-
-    public void loadSwipeTutorialLevel(int level)
-    {
-        PlayerPrefs.SetInt("inputMethod", 1);
-        PlayerPrefs.SetInt("randomSeed", level);
-        Debug.Log("Loading Swipe Tutorial level: " + level);
-        SceneManager.LoadScene("TutorialScene");
-    }
-
-    // Buttons levels
-    public void loadButtonsLevel(int level)
-    {
-        PlayerPrefs.SetInt("inputMethod", 2);
-        PlayerPrefs.SetInt("randomSeed", level);
-        Debug.Log("Loading Buttons level: " + level);
-        SceneManager.LoadScene("GameScene");
-    }
-
-
-    public void loadButtonsTutorialLevel(int level)
-    {
-        PlayerPrefs.SetInt("inputMethod", 2);
-        PlayerPrefs.SetInt("randomSeed", level);
-        Debug.Log("Loading Buttons Tutorial level: " + level);
-        SceneManager.LoadScene("TutorialScene");
-    }
 
     public void openHelp()
     {
