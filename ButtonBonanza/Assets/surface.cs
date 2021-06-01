@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class surface : MonoBehaviour
 {
@@ -26,12 +27,22 @@ public class surface : MonoBehaviour
         setObstacleVisible(false);
         Random.InitState(PlayerPrefs.GetInt("randomSeed"));
 
-        timeSinceSpeedup = Time.time;
+        timeSinceSpeedup = Time.timeSinceLevelLoad;
     }
 
     // Update is called once per frame
     void Update()
     {
+    	// end game after one minute
+    	if (60f < Time.timeSinceLevelLoad)
+    	{
+    		// save values to database/firebase
+    		// ...
+    		
+    		// return to main menu
+    		SceneManager.LoadScene("MainMenu");
+    	}
+    
         // Speedup every 20s
         if(timeSinceSpeedup + 20f < Time.time)
         {

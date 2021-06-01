@@ -6,7 +6,9 @@ public class scores : MonoBehaviour
 {
 
 	public static int playerScore; // 10 points for obstacles dodged, 0 points for obstacles hit
-	// playerScore does work, but 
+	
+	public static int inputMethod; // (1 = swiping, 2 = tapping virtual buttons)
+	public static int nrPlayedLevels = 0; 
 
     // Start is called before the first frame update
     void Start()
