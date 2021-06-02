@@ -17,7 +17,6 @@ public class bear : MonoBehaviour
 	public Material bearDuckMat;
 
 	// input control variables
-	public int inputMethod = 2; // (1 = swiping, 2 = tapping virtual buttons)
     Vector2 startTouchPos; 
     int input;
 	public Button leftBtn, rightBtn, upBtn, downBtn;
@@ -36,7 +35,7 @@ public class bear : MonoBehaviour
     	jumpSpeed = 1.5f*speed;
     	strafeSpeed = 2*speed;
     	
-    	if (inputMethod == 2) // add buttons if tapping condition
+    	if (scores.inputMethod == 2) // add buttons if tapping condition
 		{
 			listenForTaps();
 			Debug.Log("tapping virtual buttons - input function not yet created");
@@ -60,7 +59,7 @@ public class bear : MonoBehaviour
         resetPosition();
 
 		// understand user's input if swiping condition
-		if (inputMethod == 1)
+		if (scores.inputMethod == 1)
 		{
 			duckSpeed = 2*speed; // Why change the duckspeed?
 			listenForSwipes();

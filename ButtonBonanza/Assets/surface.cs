@@ -34,7 +34,7 @@ public class surface : MonoBehaviour
     void Update()
     {
     	// end game after one minute
-    	if (60f < Time.timeSinceLevelLoad)
+    	if (5f < Time.timeSinceLevelLoad)
     	{
     		// save values to database/firebase
     		// ...
