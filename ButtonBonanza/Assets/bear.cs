@@ -18,6 +18,7 @@ public class bear : MonoBehaviour
     public Material bearJumpMat;
     public Material bearMoveMat1;
     public Material bearMoveMat2;
+    public Material bearHurt;
 
 	// input control variables
     Vector2 startTouchPos; 
@@ -246,6 +247,7 @@ public class bear : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
         scores.playerHit = true;
-		Debug.Log("Bear: Collision detected");
-	}
+        GetComponent<MeshRenderer>().material = bearHurt;
+        Debug.Log("Bear: Collision detected");
+    }
 }
