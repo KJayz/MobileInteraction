@@ -56,10 +56,9 @@ public class surface : MonoBehaviour
             velocity += new Vector3(0, 0, velocity.z * 0.10f); // Verify if this speedup is doable - percentile increase so bear speed can increase at the same rate
             timeSinceSpeedup = Time.time;
         }
-
-        if (Mathf.RoundToInt(transform.position.z) == 1 && addPoints) // Approximately when the bear passes the obstacles
+        if (transform.position.z < 0.5f && addPoints) // After the bear passes the obstacles
         {
-            scores.playerScore += 10;
+            scores.updateScore(obstaclePos, obstacleType);
             Debug.Log("Player score: " + scores.playerScore);
             addPoints = false;
         }

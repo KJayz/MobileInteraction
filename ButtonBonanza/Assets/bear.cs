@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class bear : MonoBehaviour
 {
-	int lane;
+	public int lane;
 	int laneMovement;
     bool isMoving = false;
     float speed = 2f;
@@ -19,8 +19,10 @@ public class bear : MonoBehaviour
 	// input control variables
     Vector2 startTouchPos; 
     int input;
+    public int lastInput;
 	public Button leftBtn, rightBtn, upBtn, downBtn;
 	public Canvas canvas;
+    float lastInputTime;
 
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class bear : MonoBehaviour
     {
 
         timeSinceSpeedup = Time.timeSinceLevelLoad;
+        lastInputTime = Time.timeSinceLevelLoad;
         lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
     	input = 0; // (0 = none, 1 = left, 2 = right, 3 = up, 4 = down)
     	duckSpeed = speed;
@@ -139,6 +142,12 @@ public class bear : MonoBehaviour
     {
         if(GetComponent<Rigidbody>().velocity == Vector3.zero && !isMoving)
         {
+            // If input or if no input in last 1s
+            if(input != 0 || lastInputTime + 1f < Time.time)
+            {
+                lastInputTime = Time.time;
+                lastInput = input;
+            }
         	// input.getkeys are kept, to be able to test easily on desktop
             if ((Input.GetKey("a") || input == 1) && lane >= 0)
             {
@@ -209,7 +218,7 @@ public class bear : MonoBehaviour
     
 	void OnTriggerEnter(Collider other)
 	{
-		scores.playerScore -= 10;
+        scores.playerHit = true;
 		Debug.Log("Bear: Collision detected");
 	}
 }
