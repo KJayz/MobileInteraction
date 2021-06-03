@@ -39,8 +39,12 @@ public class surface : MonoBehaviour
     		// save values to database/firebase
     		// ...
     		
-    		// return to main menu
-    		SceneManager.LoadScene("MainMenu");
+    		// return to main menu or go to questionnaires
+    		if (scores.nrPlayedLevels == 3 || scores.nrPlayedLevels == 6)
+    		{
+    			SceneManager.LoadScene("Intuitiveness");
+    		}
+    		else SceneManager.LoadScene("MainMenu");
     	}
     
         // Speedup every 20s

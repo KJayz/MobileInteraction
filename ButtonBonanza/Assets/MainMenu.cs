@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-	// NOTE: Original loadLevel function with my added code
 	public void loadLevel(int level)
 	{
         PlayerPrefs.SetInt("randomSeed", level);      

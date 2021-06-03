@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// inspired by: https://www.youtube.com/watch?v=zbNxrGl4nfc
 public class demographics : MonoBehaviour
 {
 	public GameObject[] questionGroups; 
