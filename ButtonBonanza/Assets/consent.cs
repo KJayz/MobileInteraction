@@ -11,7 +11,7 @@ public class consent : MonoBehaviour
 	
 	public void ReadConsent()
 	{
-		agreeToggle.interactable = !agreeToggle.interactable;
+		agreeToggle.interactable = true;
 	}
     
     public void ToggleAgree()

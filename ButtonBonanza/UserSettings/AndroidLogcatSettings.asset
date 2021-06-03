@@ -1,5 +1,5 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "ZY322HGW3W",
     "m_SelectedPackage": {
         "deviceId": "",
         "name": "",
@@ -7,7 +7,26 @@
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.motorola.launcher3",
+            "processId": 2021,
+            "exited": false
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.DefaultCompany.ButtonBonanza",
+            "processId": 22259,
+            "exited": true
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.google.android.apps.authenticator2",
+            "processId": 22547,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +60,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },

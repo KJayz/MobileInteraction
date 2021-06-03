@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1325463546}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.06422018
+  m_Size: 0.0625
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1773,8 +1773,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2550}
-  m_SizeDelta: {x: 500, y: 5450}
+  m_AnchoredPosition: {x: 0, y: -2625}
+  m_SizeDelta: {x: 500, y: 5600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906060332
 MonoBehaviour:
@@ -1810,9 +1810,9 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "INFORMED CONSENT FORM (EN)\n\n<b>Title of the research:</b> Influence
-    of game controls on performance and enjoyment of a mobile run-and-dodge game.\n
-    \n<b>Goal of the research:</b> This research is conducted by Evelien van Workum,
-    Kwinten Jacobs, Ana Patricia M\xE1rquez S\xE1nchez, Jorian Berkhout, Naomi Vogelpoel
+    of game controls on performance and enjoyment of a mobile run-and-dodge game.\n\n<b>Goal
+    of the research:</b> This research is conducted by Evelien van Workum, Kwinten
+    Jacobs, Ana Patricia M\xE1rquez S\xE1nchez, Jorian Berkhout, Naomi Vogelpoel
     and Alissa Vermast (all students from the University of Utrecht). You are hereby
     invited to participate in this research. The goal of the research is to investigate
     how different types of controls in a mobile game can influence performance and
@@ -1840,14 +1840,14 @@ MonoBehaviour:
     Your participation is completely voluntary and you are allowed to quit at any
     moment you like. If you choose to quit the study, your results and information
     will be deleted and not used for the study. \n\n<b>Monetary compensation:</b>
-    You will not receive any monetary reward for participating in this research.\n
-    \n<b>Confidentiality of data:</b> Your privacy is and will be maximally protected.
-    No confidential information or personal data will be disclosed or publicized
-    in any way that will be retracable to you.\n* We will not ask for any information
-    that is not relevant for this research. \n* The results of the experiment will
-    be saved in a document on the Google drive that is only accessible to the researchers
-    of this study.\n* If you would like to gain insights and see exactly what data
-    we have saved about you, you can request this by sending an email to one of the
+    You will not receive any monetary reward for participating in this research.\n\n<b>Confidentiality
+    of data:</b> Your privacy is and will be maximally protected. No confidential
+    information or personal data will be disclosed or publicized in any way that
+    will be retracable to you.\n* We will not ask for any information that is not
+    relevant for this research. \n* The results of the experiment will be saved in
+    a document on the Google drive that is only accessible to the researchers of
+    this study.\n* If you would like to gain insights and see exactly what data we
+    have saved about you, you can request this by sending an email to one of the
     researchers. Requesting your data will not be possible anymore after all the
     data has been anonymized.\n* The original data will be destroyed after the data
     has been anonymized.\nVoluntary concerns: Participation in this study is completely

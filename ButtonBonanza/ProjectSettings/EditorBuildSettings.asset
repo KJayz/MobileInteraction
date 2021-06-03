@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: f1b1f679a020c144da6b25f96f4370fb
+  - enabled: 1
+    path: Assets/Scenes/Intuitiveness.unity
+    guid: 9c46f83f69237cfde94900c0b20da596
   m_configObjects: {}

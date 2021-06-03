@@ -48,7 +48,10 @@ public class demographics : MonoBehaviour
     			}
     		}
     	}
-    	// else if the answers are not a toggle group (maybe for age later)...
+    	else if (a.GetComponentInChildren<InputField>() != null)
+    	{
+    		result = a.GetComponentInChildren<InputField>().text;
+    	}
     	
     	return result;
     }
