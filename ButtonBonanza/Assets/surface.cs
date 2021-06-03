@@ -44,7 +44,7 @@ public class surface : MonoBehaviour
     		// return to main menu or go to questionnaires
     		if (scores.nrPlayedLevels == 3 || scores.nrPlayedLevels == 6)
     		{
-    			SceneManager.LoadScene("Intuitiveness");
+    			SceneManager.LoadScene("HoldingPhone");
     		}
     		else SceneManager.LoadScene("MainMenu");
     	}
