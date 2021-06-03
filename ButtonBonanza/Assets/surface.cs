@@ -14,14 +14,16 @@ public class surface : MonoBehaviour
 
     GameObject thimble;
     GameObject hangingButtons;
-    //GameObject wall1 = transform.GetChild(2);
-    //GameObject wall2 = transform.GetChild(3);
+    GameObject wall1;
+    GameObject wall2;
 
     // Start is called before the first frame update
     void Start()
     {
         thimble = transform.GetChild(0).gameObject;
         hangingButtons = transform.GetChild(1).gameObject;
+        wall1 = transform.GetChild(2).gameObject;
+        wall2 = transform.GetChild(3).gameObject;
         velocity = new Vector3(0,0,2.5f);
         // Hide obstacles (so the player isn't stuck in the middle when starting the game)
         setObstacleVisible(false);
@@ -93,16 +95,16 @@ public class surface : MonoBehaviour
             switch (obstaclePos)
             {
                 case -1:
-                    // wall1.transform.position = new Vector(0, wall1.transform.position.y, wall1.transform.position.z);
-                    // wall2.transform.position = new Vector(1, wall2.transform.position.y, wall2.transform.position.z);
+                    wall1.transform.position = new Vector3(0, wall1.transform.position.y, wall1.transform.position.z);
+                    wall2.transform.position = new Vector3(1, wall2.transform.position.y, wall2.transform.position.z);
                     break;
                 case 0:
-                    // wall1.transform.position = new Vector(-1, wall1.transform.position.y, wall1.transform.position.z);
-                    // wall2.transform.position = new Vector(1, wall2.transform.position.y, wall2.transform.position.z);
+                    wall1.transform.position = new Vector3(-1, wall1.transform.position.y, wall1.transform.position.z);
+                    wall2.transform.position = new Vector3(1, wall2.transform.position.y, wall2.transform.position.z);
                     break;
                 case 1:
-                    // wall1.transform.position = new Vector(-1, wall1.transform.position.y, wall1.transform.position.z);
-                    // wall2.transform.position = new Vector(0, wall2.transform.position.y, wall2.transform.position.z);
+                    wall1.transform.position = new Vector3(-1, wall1.transform.position.y, wall1.transform.position.z);
+                    wall2.transform.position = new Vector3(0, wall2.transform.position.y, wall2.transform.position.z);
                     break;
             }
             addPoints = true;
