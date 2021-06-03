@@ -9,6 +9,7 @@ public class demographics : MonoBehaviour
 {
 	public GameObject[] questionGroups; 
 	public string[] answers;
+    public Text allQuestionsAnsweredText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,12 @@ public class demographics : MonoBehaviour
     	for (int i = 0; i < answers.Length; i++)
     	{
     		answers[i] = ReadAnswer(questionGroups[i]);
-    		
+    	    if(answers[i] == "" || answers[i] == null)
+            {
+                Debug.Log("Empty Answer");
+                allQuestionsAnsweredText.gameObject.SetActive(true);
+                return;
+            }	
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
     		
     		// save demographics to firebase
