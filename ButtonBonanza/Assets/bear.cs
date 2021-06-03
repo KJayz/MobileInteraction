@@ -15,6 +15,7 @@ public class bear : MonoBehaviour
     // materials needed for changing back and forth to ducking bear sprite
     public Material bearMat; 
 	public Material bearDuckMat;
+    public Material bearJumpMat;
 
 	// input control variables
     Vector2 startTouchPos; 
@@ -191,9 +192,14 @@ public class bear : MonoBehaviour
     IEnumerator jump()
     {
         isMoving = true;
+        //bear starts jumping
+        //GetComponent<MeshRenderer>().material = bearJumpMat;
         GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.up;
     	GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity - jumpSpeed * Vector3.up * Time.deltaTime;
     	yield return new WaitWhile(() => transform.position.y < 1.5f);
+
+        //bear starts moving notmally again
+        GetComponent<MeshRenderer>().material = bearMat;
     	GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.down;
     	GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity + jumpSpeed * Vector3.down * Time.deltaTime; 
     	yield return new WaitWhile(() => transform.position.y > 0.5f);
