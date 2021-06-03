@@ -16,6 +16,8 @@ public class bear : MonoBehaviour
     public Material bearMat; 
 	public Material bearDuckMat;
     public Material bearJumpMat;
+    public Material bearMoveMat1;
+    public Material bearMoveMat2;
 
 	// input control variables
     Vector2 startTouchPos; 
@@ -30,7 +32,6 @@ public class bear : MonoBehaviour
     void Start()
 
     {
-
         timeSinceSpeedup = Time.timeSinceLevelLoad;
         lastInputTime = Time.timeSinceLevelLoad;
         lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
@@ -183,9 +184,29 @@ public class bear : MonoBehaviour
         isMoving = true;
         GetComponent<Rigidbody>().velocity = new Vector3(laneMovement, 0, 0) * strafeSpeed;
         lane += laneMovement;
+
+        //Changing the material of the bear
+        if (laneMovement == 1)
+        {
+            GetComponent<MeshRenderer>().material = bearMoveMat2;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material = bearMoveMat1;
+        }
         yield return new WaitForSeconds(1 / strafeSpeed);
+        if (laneMovement == 1)
+        {
+            GetComponent<MeshRenderer>().material = bearMoveMat1;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material = bearMoveMat2;
+        }
         GetComponent<Rigidbody>().velocity = Vector3.zero;
     	laneMovement = 0;
+        yield return new WaitForSeconds(1 / (strafeSpeed*3));
+        GetComponent<MeshRenderer>().material = bearMat;
         isMoving = false;
     }
     

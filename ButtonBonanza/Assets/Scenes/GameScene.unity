@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 21242427}
   - component: {fileID: 21242432}
   - component: {fileID: 21242433}
+  - component: {fileID: 21242434}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -160,6 +161,9 @@ MonoBehaviour:
   lane: 0
   bearMat: {fileID: 2100000, guid: 1e205870fb021d29b8eb54ac92ef8658, type: 2}
   bearDuckMat: {fileID: 2100000, guid: 12e45340a36a13d11a20074193ed800c, type: 2}
+  bearJumpMat: {fileID: 2100000, guid: a3faaba8b3d8c0b45b0c0c1e783b5e6b, type: 2}
+  bearMoveMat1: {fileID: 2100000, guid: 3ad02e636478fbc4eb0991590852b107, type: 2}
+  bearMoveMat2: {fileID: 2100000, guid: 845db71d42c29d44d9664e5cdfe5fb3e, type: 2}
   lastInput: 0
   leftBtn: {fileID: 4239136460059735094, guid: 06baca60027c9455ba5fa62709116dd6, type: 3}
   rightBtn: {fileID: 7695092115757276214, guid: e366943d094cf582a910f4ac1d2f7eda,
@@ -273,6 +277,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 0.075, z: 9.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &21242434
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21242426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63e7a08f272c9004db730e2383a04418, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &61084777
 GameObject:
   m_ObjectHideFlags: 0
