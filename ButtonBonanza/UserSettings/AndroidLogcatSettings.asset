@@ -37,6 +37,12 @@
             "name": "com.DefaultCompany.ButtonBonanza",
             "processId": 23904,
             "exited": true
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.DefaultCompany.ButtonBonanza",
+            "processId": 2328,
+            "exited": true
         }
     ],
     "m_Tags": {

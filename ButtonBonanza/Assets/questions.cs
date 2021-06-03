@@ -40,11 +40,25 @@ public class questions : MonoBehaviour
     	SceneManager.LoadScene("MainMenu");
     }
     
-    public void SubmitGEQ1()
+    public void SubmitPhoneHolding()
     {
     	for (int i = 0; i < answers.Length; i++)
     	{
     		answers[i] = ReadAnswerLabels(questionGroups[i]);
+    		Debug.Log("Answer to the question is " + answers[i]);
+    		
+    		// save phone holding to firebase
+    		// ... 
+    	}
+    	
+    	SceneManager.LoadScene("Enjoyment1");
+    }
+    
+    public void SubmitGEQ1()
+    {
+    	for (int i = 0; i < answers.Length; i++)
+    	{
+    		answers[i] = ReadAnswerLabels(questionGroups[i]).Substring(0,1);
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
     		
     		// save first half of GEQ to firebase
@@ -58,7 +72,7 @@ public class questions : MonoBehaviour
     {
     	for (int i = 0; i < answers.Length; i++)
     	{
-    		answers[i] = ReadAnswerLabels(questionGroups[i]);
+    		answers[i] = ReadAnswerLabels(questionGroups[i]).Substring(0,1);
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
     		
     		// save second half of GEQ to firebase
@@ -106,7 +120,7 @@ public class questions : MonoBehaviour
     			Toggle toggleChild = a.transform.GetChild(i).GetComponent<Toggle>();
     			if (toggleChild != null && toggleChild.isOn) // if null, then scale label encountered
     			{
-    				result = toggleChild.ToString().Substring(0,1);
+    				result = toggleChild.ToString();
     				break;
     			}
     		}
