@@ -44,7 +44,7 @@ public class questions : MonoBehaviour
     {
     	for (int i = 0; i < answers.Length; i++)
     	{
-    		answers[i] = ReadAnswerLabels(questionGroups[i]).ToString();
+    		answers[i] = ReadAnswerLabels(questionGroups[i]);
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
     		
     		// save first half of GEQ to firebase
@@ -58,7 +58,7 @@ public class questions : MonoBehaviour
     {
     	for (int i = 0; i < answers.Length; i++)
     	{
-    		answers[i] = ReadAnswerLabels(questionGroups[i]).ToString();
+    		answers[i] = ReadAnswerLabels(questionGroups[i]);
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
     		
     		// save second half of GEQ to firebase
@@ -93,9 +93,9 @@ public class questions : MonoBehaviour
     	return result;
     }
     
-    int ReadAnswerLabels(GameObject questionGroup)
+    string ReadAnswerLabels(GameObject questionGroup)
     {
-    	int result = -1;
+    	string result = "";
     	
     	GameObject a = questionGroup.transform.Find("Answer").gameObject;
     	
@@ -103,11 +103,10 @@ public class questions : MonoBehaviour
     	{
     		for (int i = 0; i < a.transform.childCount; i++)
     		{
-    			// still has an error somewhere!!!
     			Toggle toggleChild = a.transform.GetChild(i).GetComponent<Toggle>();
-    			if (toggleChild != null && toggleChild.isOn)
+    			if (toggleChild != null && toggleChild.isOn) // if null, then scale label encountered
     			{
-    				result = toggleChild.transform.GetSiblingIndex() - 2;
+    				result = toggleChild.ToString().Substring(0,1);
     				break;
     			}
     		}
