@@ -193,7 +193,7 @@ public class bear : MonoBehaviour
     {
         isMoving = true;
         //bear starts jumping
-        //GetComponent<MeshRenderer>().material = bearJumpMat;
+        GetComponent<MeshRenderer>().material = bearJumpMat;
         GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.up;
     	GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity - jumpSpeed * Vector3.up * Time.deltaTime;
     	yield return new WaitWhile(() => transform.position.y < 1.5f);
