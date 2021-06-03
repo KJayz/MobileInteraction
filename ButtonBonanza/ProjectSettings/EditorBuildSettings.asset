@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intuitiveness.unity
     guid: 9c46f83f69237cfde94900c0b20da596
+  - enabled: 1
+    path: Assets/Scenes/Enjoyment1.unity
+    guid: f13c086e572d752aabad9cfc88101f35
+  - enabled: 1
+    path: Assets/Scenes/Enjoyment2.unity
+    guid: ad8690c02840fa92c8a3278516f81952
   m_configObjects: {}

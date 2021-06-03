@@ -24,7 +24,19 @@
             "deviceId": "ZY322HGW3W",
             "name": "com.google.android.apps.authenticator2",
             "processId": 22547,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.DefaultCompany.ButtonBonanza",
+            "processId": 23714,
+            "exited": true
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.DefaultCompany.ButtonBonanza",
+            "processId": 23904,
+            "exited": true
         }
     ],
     "m_Tags": {

@@ -35,13 +35,12 @@ public class intuitiveness : MonoBehaviour
     		// ... 
     	}
     	
-    	SceneManager.LoadScene("MainMenu");
+    	SceneManager.LoadScene("Enjoyment1");
     }
     
     public void UpdateSliderChanges(string name)
     {
     	changedSliders.Add(name);
-    	Debug.Log("Changed Sliders count: " + changedSliders.Count);
     }
     
     int ReadAnswer(GameObject questionGroup)
