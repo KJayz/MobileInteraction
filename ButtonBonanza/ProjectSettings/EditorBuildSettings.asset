@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TextScenes/OutOfTime.unity
     guid: b151dd09fd6901b779a0b31311db5f73
+  - enabled: 1
+    path: Assets/Scenes/TextScenes/VirtBtnExpl.unity
+    guid: 2556ebad948e90aea9194edce3fce30b
+  - enabled: 1
+    path: Assets/Scenes/TextScenes/SwipeExpl.unity
+    guid: 54cf64a83922dd03eae91397e0bc2ba0
   m_configObjects: {}
