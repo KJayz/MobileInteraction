@@ -36,7 +36,7 @@ public class surface : MonoBehaviour
     void Update()
     {
     	// end game after one minute
-    	if (6f < Time.timeSinceLevelLoad || (20f < Time.timeSinceLevelLoad && scores.tutorialLevel == true))
+    	if (60f < Time.timeSinceLevelLoad || (20f < Time.timeSinceLevelLoad && scores.tutorialLevel == true))
     	{
             // save values to database/firebase
             scores.submitToDB();
