@@ -55,21 +55,24 @@ public class scores : MonoBehaviour
         // Debug.Log(playerScore);
     }
 
-    static void submitToDB()
+    public static void submitToDB()
     {
 
-//        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
 
-//        DocumentReference docRef = db.Collection("users").Document("alovelace");
-//        Dictionary<string, object> user = new Dictionary<string, object>
-//{
-//        { "First", "Ada" },
-//        { "Last", "Lovelace" },
-//        { "Born", 1815 },
-//};
-//        docRef.SetAsync(user).ContinueWithOnMainThread(task => {
-//            Debug.Log("Added data to the alovelace document in the users collection.");
-//        });
+        DocumentReference docRef = db.Collection("users").Document("alovelace");
+        Dictionary<string, object> user = new Dictionary<string, object>
+{
+        { "Score", playerScore },
+        { "CorrectSwipes", correctSwipes },
+        { "PoorlyTimedSwipes", poorlyTimedSwipes },
+        { "IncorrectSwipes", incorrectSwipes },
+        { "MissedSwipes", missedSwipes },
+};
+        docRef.SetAsync(user).ContinueWithOnMainThread(task =>
+        {
+            Debug.Log("Added data to the alovelace document in the users collection.");
+        });
     }
 
     public static void updateScore(float obstaclePos, float obstacleType)
@@ -84,7 +87,7 @@ public class scores : MonoBehaviour
         }
 
         playerHit = false;
-        //Debug.Log("Obstacle Type: " + obstacleType);
+        Debug.Log("Obstacle Type: " + obstacleType);
         //Debug.Log("Last Input: " + bearScript.lastInput);
         if (bearScript.lane == obstaclePos && obstacleType + 3 == bearScript.lastInput)
         {
