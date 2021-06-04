@@ -60,14 +60,18 @@ public class MainMenu : MonoBehaviour
         } else
         {
             scores.tutorialLevel = true;
-            SceneManager.LoadScene("TutorialScene");
+            if (scores.inputMethod == 1) SceneManager.LoadScene("SwipeExpl");
+            else if (scores.inputMethod == 2) SceneManager.LoadScene("VirtBtnExpl");
+            else SceneManager.LoadScene("TutorialScene"); // default
         }
         scores.nrPlayedLevels += 1;
 	}
 
     public void openHelp()
     {
-        // TODO: Show help popup
+    	// TODO: Create help page
+		// SceneManager.LoadScene("HelpPage", LoadSceneMode.Additive);
+		// SceneManager.UnloadSceneAsync("HelpPage");
     }
 
     public void quit()

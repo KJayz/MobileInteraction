@@ -36,16 +36,11 @@ public class surface : MonoBehaviour
     void Update()
     {
     	// end game after one minute
-    	if (60f < Time.timeSinceLevelLoad || (20f < Time.timeSinceLevelLoad && scores.tutorialLevel == true))
+    	if (6f < Time.timeSinceLevelLoad || (20f < Time.timeSinceLevelLoad && scores.tutorialLevel == true))
     	{
             // save values to database/firebase
             scores.submitToDB();
-    		// return to main menu or go to questionnaires
-    		if (scores.nrPlayedLevels == 3 || scores.nrPlayedLevels == 6)
-    		{
-    			SceneManager.LoadScene("HoldingPhone");
-    		}
-    		else SceneManager.LoadScene("MainMenu");
+			SceneManager.LoadScene("OutOfTime");
     	}
     
         // Speedup every 20s

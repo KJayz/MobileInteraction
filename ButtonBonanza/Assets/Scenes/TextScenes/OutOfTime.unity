@@ -1188,9 +1188,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: questions, Assembly-CSharp
-        m_MethodName: SubmitPhoneHolding
+      - m_Target: {fileID: 2107264308}
+        m_TargetAssemblyTypeName: extraPagesFlow, Assembly-CSharp
+        m_MethodName: OutOfTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1344,6 +1344,7 @@ GameObject:
   - component: {fileID: 2107264304}
   - component: {fileID: 2107264303}
   - component: {fileID: 2107264307}
+  - component: {fileID: 2107264308}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1448,6 +1449,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InternetErrorText: {fileID: 0}
+--- !u!114 &2107264308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107264302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053d2ac55de51fea2836bcd28af76454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 371172557}
 --- !u!1 &2133174238
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,7 +79,7 @@ public class questions : MonoBehaviour
     		// ... 
     	}
     	
-    	SceneManager.LoadScene("MainMenu");
+    	SceneManager.LoadScene("ThankYou");
     }
     
     string ReadAnswer(GameObject questionGroup)
