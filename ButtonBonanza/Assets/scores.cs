@@ -28,51 +28,32 @@ public class scores : MonoBehaviour
         bearScript = player.GetComponent<bear>();
         playerScore = 0;
         timeSinceLevelLoad = Time.timeSinceLevelLoad;
-
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-            var dependencyStatus = task.Result;
-            if (dependencyStatus == Firebase.DependencyStatus.Available)
-            {
-                // Create and hold a reference to your FirebaseApp,
-                // where app is a Firebase.FirebaseApp property of your application class.
-                Firebase.FirebaseApp app = Firebase.FirebaseApp.DefaultInstance;
-
-                // Set a flag here to indicate whether Firebase is ready to use by your app.
-            }
-            else
-            {
-                UnityEngine.Debug.LogError(System.String.Format(
-                  "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-                // Firebase Unity SDK is not safe to use here.
-            }
-        });
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(playerScore);
+
     }
 
     public static void submitToDB()
     {
 
-        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+//        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
 
-        DocumentReference docRef = db.Collection("users").Document("alovelace");
-        Dictionary<string, object> user = new Dictionary<string, object>
-{
-        { "Score", playerScore },
-        { "CorrectSwipes", correctSwipes },
-        { "PoorlyTimedSwipes", poorlyTimedSwipes },
-        { "IncorrectSwipes", incorrectSwipes },
-        { "MissedSwipes", missedSwipes },
-};
-        docRef.SetAsync(user).ContinueWithOnMainThread(task =>
-        {
-            Debug.Log("Added data to the alovelace document in the users collection.");
-        });
+//        DocumentReference docRef = db.Collection("users").Document("alovelace");
+//        Dictionary<string, object> user = new Dictionary<string, object>
+//{
+//        { "Score", playerScore },
+//        { "CorrectSwipes", correctSwipes },
+//        { "PoorlyTimedSwipes", poorlyTimedSwipes },
+//        { "IncorrectSwipes", incorrectSwipes },
+//        { "MissedSwipes", missedSwipes },
+//};
+//        docRef.SetAsync(user).ContinueWithOnMainThread(task =>
+//        {
+//            Debug.Log("Added data to the alovelace document in the users collection.");
+//        });
     }
 
     public static void updateScore(float obstaclePos, float obstacleType)
