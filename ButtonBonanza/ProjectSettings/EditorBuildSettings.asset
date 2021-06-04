@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Enjoyment2.unity
     guid: ad8690c02840fa92c8a3278516f81952
+  - enabled: 1
+    path: Assets/Scenes/TextScenes/ThankYou.unity
+    guid: 660669e1942807a96a4f2cf915614087
+  - enabled: 1
+    path: Assets/Scenes/TextScenes/OutOfTime.unity
+    guid: b151dd09fd6901b779a0b31311db5f73
   m_configObjects: {}

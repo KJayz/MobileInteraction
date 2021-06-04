@@ -4152,7 +4152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Do you have any physical condition that interferes with your find motor
+  m_Text: 'Do you have any physical condition that interferes with your fine motor
     skills? '
 --- !u!222 &1746771056
 CanvasRenderer:
