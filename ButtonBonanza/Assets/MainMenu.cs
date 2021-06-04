@@ -55,9 +55,11 @@ public class MainMenu : MonoBehaviour
         
         if (level < 10)
         {
+            scores.tutorialLevel = false;
             SceneManager.LoadScene("GameScene");
         } else
         {
+            scores.tutorialLevel = true;
             SceneManager.LoadScene("TutorialScene");
         }
         scores.nrPlayedLevels += 1;

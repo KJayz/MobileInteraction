@@ -22,6 +22,8 @@ public class scores : MonoBehaviour
     static int missedSwipes = 0;
     static int poorlyTimedSwipes = 0;
 
+    public static bool tutorialLevel = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,21 +41,21 @@ public class scores : MonoBehaviour
     public static void submitToDB()
     {
 
-//        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
 
-//        DocumentReference docRef = db.Collection("users").Document("alovelace");
-//        Dictionary<string, object> user = new Dictionary<string, object>
-//{
-//        { "Score", playerScore },
-//        { "CorrectSwipes", correctSwipes },
-//        { "PoorlyTimedSwipes", poorlyTimedSwipes },
-//        { "IncorrectSwipes", incorrectSwipes },
-//        { "MissedSwipes", missedSwipes },
-//};
-//        docRef.SetAsync(user).ContinueWithOnMainThread(task =>
-//        {
-//            Debug.Log("Added data to the alovelace document in the users collection.");
-//        });
+        DocumentReference docRef = db.Collection("users").Document("buttonbonanza");
+        Dictionary<string, object> user = new Dictionary<string, object>
+        {
+                { "Score", playerScore },
+                { "CorrectSwipes", correctSwipes },
+                { "PoorlyTimedSwipes", poorlyTimedSwipes },
+                { "IncorrectSwipes", incorrectSwipes },
+                { "MissedSwipes", missedSwipes },
+        };
+        docRef.SetAsync(user).ContinueWithOnMainThread(task =>
+        {
+            Debug.Log("Added data to the alovelace document in the users collection.");
+        });
     }
 
     public static void updateScore(float obstaclePos, float obstacleType)
