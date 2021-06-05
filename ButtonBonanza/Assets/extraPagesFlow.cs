@@ -43,7 +43,6 @@ public class extraPagesFlow : MonoBehaviour
     public void ThankYou()
     {
     	// TODO: open main menu like screen with only free play buttons: one for swipe, one for tapping
-    	// ? show high score somewhere? 
     	SceneManager.LoadScene("MainMenu"); 
     }
 }

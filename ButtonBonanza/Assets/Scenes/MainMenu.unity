@@ -568,7 +568,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 720544584}
   m_OnClick:
     m_PersistentCalls:
@@ -996,7 +996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level S2
+  m_Text: Level 2
 --- !u!222 &1134524683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level S1
+  m_Text: Level 1
 --- !u!222 &1307182812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1449,7 +1449,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1741635638}
   m_OnClick:
     m_PersistentCalls:
@@ -1874,6 +1874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e9cfb68a9c7064ab4fcd92561752be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialBtn: {fileID: 97002547}
+  lvl1Btn: {fileID: 720544583}
+  lvl2Btn: {fileID: 1741635637}
   InternetErrorText: {fileID: 0}
 --- !u!1 &2133174238
 GameObject:

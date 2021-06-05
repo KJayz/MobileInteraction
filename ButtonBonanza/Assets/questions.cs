@@ -79,7 +79,8 @@ public class questions : MonoBehaviour
     		// ... 
     	}
     	
-    	SceneManager.LoadScene("ThankYou");
+    	if (scores.nrPlayedLevels == 6) SceneManager.LoadScene("ThankYou");
+		else SceneManager.LoadScene("MainMenu");
     }
     
     string ReadAnswer(GameObject questionGroup)

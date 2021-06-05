@@ -9,7 +9,7 @@ using Firebase.Extensions;
 
 public class MainMenu : MonoBehaviour
 {
-
+	public Button tutorialBtn, lvl1Btn, lvl2Btn;
     public Text InternetErrorText;
 
     void start()
@@ -32,10 +32,33 @@ public class MainMenu : MonoBehaviour
             }
         });
     }
+    
     void update()
     {
         FirebaseDatabase.DefaultInstance.GetReference(".info/connected").ValueChanged += HandleConnectedChanged;
     }
+    
+    void OnValidate()
+	{
+        if (scores.nrPlayedLevels %3 == 0)
+	    {
+	    	tutorialBtn.interactable = true;
+	    	lvl1Btn.interactable = false;
+	    	lvl2Btn.interactable = false;
+	    }
+	    else if (scores.nrPlayedLevels %3 == 1)
+	    {
+	    	tutorialBtn.interactable = false;
+	    	lvl1Btn.interactable = true;
+	    	lvl2Btn.interactable = false;
+	    } 
+	    else if (scores.nrPlayedLevels %3 == 2)
+	    {
+	    	tutorialBtn.interactable = false;
+	    	lvl1Btn.interactable = false;
+	    	lvl2Btn.interactable = true;
+	    }
+	}
 
 	public void loadLevel(int level)
 	{
@@ -53,23 +76,25 @@ public class MainMenu : MonoBehaviour
         	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
         }
         
+        
         if (level < 10)
         {
-            scores.tutorialLevel = false;
-            SceneManager.LoadScene("GameScene");
-        } else
+            scores.tutorialLevel = false;		    
+		    SceneManager.LoadScene("GameScene");
+        } 
+        else
         {
             scores.tutorialLevel = true;
             if (scores.inputMethod == 1) SceneManager.LoadScene("SwipeExpl");
             else if (scores.inputMethod == 2) SceneManager.LoadScene("VirtBtnExpl");
             else SceneManager.LoadScene("TutorialScene"); // default
         }
+        
         scores.nrPlayedLevels += 1;
 	}
 
     public void openHelp()
     {
-    	// TODO: Create help page
 		SceneManager.LoadScene("HelpPage", LoadSceneMode.Additive);
     }
 

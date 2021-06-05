@@ -44,7 +44,6 @@ public class bear : MonoBehaviour
     	if (scores.inputMethod == 2) // add buttons if tapping condition
 		{
 			listenForTaps();
-			Debug.Log("tapping virtual buttons - input function not yet created");
 		}
     }
 
