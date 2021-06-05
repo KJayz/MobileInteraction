@@ -20,6 +20,11 @@ public class extraPagesFlow : MonoBehaviour
         
     }
     
+    public void Return()
+    {
+    	SceneManager.UnloadSceneAsync("HelpPage");
+    }
+    
     public void TryIt()
     {
     	SceneManager.LoadScene("TutorialScene");

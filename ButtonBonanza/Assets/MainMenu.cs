@@ -70,8 +70,7 @@ public class MainMenu : MonoBehaviour
     public void openHelp()
     {
     	// TODO: Create help page
-		// SceneManager.LoadScene("HelpPage", LoadSceneMode.Additive);
-		// SceneManager.UnloadSceneAsync("HelpPage");
+		SceneManager.LoadScene("HelpPage", LoadSceneMode.Additive);
     }
 
     public void quit()
