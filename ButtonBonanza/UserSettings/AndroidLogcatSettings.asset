@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "ZY322HGW3W",
         "name": "com.DefaultCompany.ButtonBonanza",
-        "processId": 15548,
+        "processId": 23000,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -48,6 +48,18 @@
             "deviceId": "ZY322HGW3W",
             "name": "com.DefaultCompany.ButtonBonanza",
             "processId": 15548,
+            "exited": false
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.DefaultCompany.ButtonBonanza",
+            "processId": 22070,
+            "exited": false
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.DefaultCompany.ButtonBonanza",
+            "processId": 23000,
             "exited": false
         }
     ],
