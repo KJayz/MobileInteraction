@@ -17,18 +17,30 @@ public class scores : MonoBehaviour
 
     public static bool playerHit = false;
 
-    static int correctSwipes = 0;
-    static int incorrectSwipes = 0;
-    static int missedSwipes = 0;
-    static int poorlyTimedSwipes = 0;
+    static int correctSwipes;
+    static int incorrectSwipes;
+    static int missedSwipes;
+    static int poorlyTimedSwipes;
 
     public static bool tutorialLevel = false;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log("ID: " + PlayerPrefs.GetInt("UserID"));
+        if (PlayerPrefs.GetInt("UserID") == 0)
+        {
+            PlayerPrefs.SetInt("UserID", Random.Range(1, 1000000));
+            Debug.Log("ID: " + PlayerPrefs.GetInt("UserID"));
+        }
+
         bearScript = player.GetComponent<bear>();
         playerScore = 0;
+        correctSwipes = 0;
+        incorrectSwipes = 0;
+        missedSwipes = 0;
+        poorlyTimedSwipes = 0;
         timeSinceLevelLoad = Time.timeSinceLevelLoad;
     }
 
@@ -43,7 +55,7 @@ public class scores : MonoBehaviour
 
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
 
-        DocumentReference docRef = db.Collection("users").Document("buttonbonanza");
+        DocumentReference docRef = db.Collection("User " + PlayerPrefs.GetInt("UserID")).Document("Level" + PlayerPrefs.GetInt("randomSeed"));
         Dictionary<string, object> user = new Dictionary<string, object>
         {
                 { "Score", playerScore },
@@ -54,7 +66,7 @@ public class scores : MonoBehaviour
         };
         docRef.SetAsync(user).ContinueWithOnMainThread(task =>
         {
-            Debug.Log("Added data to the alovelace document in the users collection.");
+            Debug.Log("Score Data Saved");
         });
     }
 
