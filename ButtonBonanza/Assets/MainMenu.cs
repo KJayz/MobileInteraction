@@ -40,6 +40,8 @@ public class MainMenu : MonoBehaviour
     
     void OnValidate()
 	{
+		if (SceneManager.GetActiveScene().name != "MainMenu") return;
+		
         if (scores.nrPlayedLevels %3 == 0)
 	    {
 	    	tutorialBtn.interactable = true;
