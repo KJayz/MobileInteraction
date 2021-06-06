@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571343, b: 0.30692208, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1877,7 +1877,7 @@ MonoBehaviour:
   tutorialBtn: {fileID: 97002547}
   lvl1Btn: {fileID: 720544583}
   lvl2Btn: {fileID: 1741635637}
-  InternetErrorText: {fileID: 0}
+  InternetErrorText: {fileID: 559764415}
 --- !u!1 &2133174238
 GameObject:
   m_ObjectHideFlags: 0
