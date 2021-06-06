@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase.Firestore;
+using Firebase.Extensions;
 
 public class intuitiveness : MonoBehaviour
 {
@@ -34,6 +36,7 @@ public class intuitiveness : MonoBehaviour
     		// save R-TLX results to firebase
     		// ... 
     	}
+        saveToDB(answers);
     	
     	SceneManager.LoadScene("Enjoyment1");
     }
@@ -57,5 +60,17 @@ public class intuitiveness : MonoBehaviour
     	}
     	
     	return result;
+    }
+
+    void saveToDB(int[] answers)
+    {
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+
+        DocumentReference docRef = db.Collection("User " + PlayerPrefs.GetInt("UserID")).Document(SceneManager.GetActiveScene().name + "Input" + scores.inputMethod);
+        Dictionary<string, object> docData = new Dictionary<string, object>
+        {
+            { "arrayExample", answers }
+        };
+        docRef.SetAsync(docData);
     }
 }
