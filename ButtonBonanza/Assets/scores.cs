@@ -27,14 +27,6 @@ public class scores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        Debug.Log("ID: " + PlayerPrefs.GetInt("UserID"));
-        if (PlayerPrefs.GetInt("UserID") == 0)
-        {
-            PlayerPrefs.SetInt("UserID", Random.Range(1, 1000000));
-            Debug.Log("ID: " + PlayerPrefs.GetInt("UserID"));
-        }
-
         bearScript = player.GetComponent<bear>();
         playerScore = 0;
         correctSwipes = 0;
@@ -55,7 +47,7 @@ public class scores : MonoBehaviour
 
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
 
-        DocumentReference docRef = db.Collection("User " + PlayerPrefs.GetInt("UserID")).Document("Level" + PlayerPrefs.GetInt("randomSeed"));
+        DocumentReference docRef = db.Collection("User " + PlayerPrefs.GetInt("UserID")).Document("Level" + PlayerPrefs.GetInt("randomSeed") + "Input"+ scores.inputMethod);
         Dictionary<string, object> user = new Dictionary<string, object>
         {
                 { "Score", playerScore },

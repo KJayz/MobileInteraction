@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase.Firestore;
+using Firebase.Extensions;
 
 // inspired by: https://www.youtube.com/watch?v=zbNxrGl4nfc
 // note: three similar submit-functions to make them more easy to add to database
@@ -17,6 +19,14 @@ public class questions : MonoBehaviour
 
     void Start()
     {
+        // Initialize User ID
+        Debug.Log("ID: " + PlayerPrefs.GetInt("UserID"));
+        if (PlayerPrefs.GetInt("UserID") == 0)
+        {
+            PlayerPrefs.SetInt("UserID", Random.Range(1, 1000000));
+            Debug.Log("ID: " + PlayerPrefs.GetInt("UserID"));
+        }
+
         answers = new string[questionGroups.Length];
     }
     
@@ -32,11 +42,10 @@ public class questions : MonoBehaviour
             }
     		
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
-    		// save demographics to firebase
-    		// ... 
-    	}
-    	
-    	SceneManager.LoadScene("MainMenu");
+            // save demographics to firebase
+        }
+        saveToDB(answers);
+        SceneManager.LoadScene("MainMenu");
     }
     
     public void SubmitPhoneHolding()
@@ -54,8 +63,8 @@ public class questions : MonoBehaviour
     		// save phone holding to firebase
     		// ... 
     	}
-    	
-    	SceneManager.LoadScene("Enjoyment1");
+        saveToDB(answers);
+        SceneManager.LoadScene("Enjoyment1");
     }
     
     public void SubmitGEQ1()
@@ -73,8 +82,8 @@ public class questions : MonoBehaviour
     		// save first half of GEQ to firebase
     		// ... 
     	}
-    	
-    	SceneManager.LoadScene("Enjoyment2");
+        saveToDB(answers);
+        SceneManager.LoadScene("Enjoyment2");
     }
     
     public void SubmitGEQ2()
@@ -92,6 +101,7 @@ public class questions : MonoBehaviour
     		// save second half of GEQ to firebase
     		// ... 
     	}
+        saveToDB(answers);
     	
     	if (scores.nrPlayedLevels == 6) SceneManager.LoadScene("ThankYou");
 		else SceneManager.LoadScene("MainMenu");
@@ -142,5 +152,17 @@ public class questions : MonoBehaviour
     	}
     	
     	return result;
+    }
+
+    void saveToDB(string[] answers)
+    {
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+
+        DocumentReference docRef = db.Collection("User " + PlayerPrefs.GetInt("UserID")).Document(SceneManager.GetActiveScene().name + "Input"+ scores.inputMethod);
+        Dictionary<string, object> docData = new Dictionary<string, object>
+        {
+            { "arrayExample", answers }
+        };
+        docRef.SetAsync(docData);
     }
 }
