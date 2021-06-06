@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
         FirebaseDatabase.DefaultInstance.GetReference(".info/connected").ValueChanged += HandleConnectedChanged;
     }
     
-    void OnValidate()
+    void Awake()
 	{
 		if (SceneManager.GetActiveScene().name != "MainMenu") return;
 		
