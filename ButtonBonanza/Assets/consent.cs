@@ -12,6 +12,14 @@ public class consent : MonoBehaviour
 	
 	bool agreed = false; 
 	
+    void Start()
+    {
+        if(PlayerPrefs.GetInt("FreePlay") == 1)
+        {
+            SceneManager.LoadScene("FreePlay");
+        }
+    }
+
 	public void ReadConsent()
 	{
 		agreeToggle.interactable = true;
