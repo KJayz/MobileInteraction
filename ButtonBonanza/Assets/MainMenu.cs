@@ -15,16 +15,10 @@ public class MainMenu : MonoBehaviour
     void start()
     {
 
-        Debug.Log("ID: " + PlayerPrefs.GetInt("UserID"));
-        if (PlayerPrefs.GetInt("UserID") == null)
-        {
-            PlayerPrefs.SetInt("UserID", Random.Range(0, 1000000));
-        }
     }
     
     void update()
     {
-        Debug.Log("ID: ");
         FirebaseDatabase.DefaultInstance.GetReference(".info/connected").ValueChanged += HandleConnectedChanged;
     }
     
