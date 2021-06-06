@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 // inspired by: https://www.youtube.com/watch?v=zbNxrGl4nfc
-// note: three similar submit-functions to make them more easy to add to database
+// note: four similar submit-functions to make them more easy to add to database
 public class questions : MonoBehaviour
 {
 	public GameObject popupPanel;
@@ -18,6 +18,21 @@ public class questions : MonoBehaviour
     void Start()
     {
         answers = new string[questionGroups.Length];
+    }
+    
+    void Update()
+    {
+    	for (int i = 0; i < answers.Length; i++)
+    	{
+    		string tmpAnswer = ReadAnswerLabels(questionGroups[i]);
+    		if (SceneManager.GetActiveScene().name == "Demographics") tmpAnswer = ReadAnswer(questionGroups[i]);
+    		if (tmpAnswer == "" || tmpAnswer == null)
+            {
+				nextButton.GetComponent<Image>().color = new Color(0.7843137f,0.7843137f,0.7843137f);
+                return;
+            }
+            nextButton.GetComponent<Image>().color = new Color(0.6737718f,0.8622429f,0.9716981f);
+    	}
     }
     
     public void SubmitDemographics()
