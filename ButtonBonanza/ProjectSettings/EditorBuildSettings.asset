@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TextScenes/ThankYou.unity
     guid: 559f0c58b06e240309139317077ee9e6
+  - enabled: 1
+    path: Assets/Scenes/FreePlay.unity
+    guid: 018f336be7ac838b7a2b1e1dc501e517
   m_configObjects: {}

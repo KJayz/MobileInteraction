@@ -38,8 +38,11 @@ public class surface : MonoBehaviour
     	// end game after one minute
     	if (6f < Time.timeSinceLevelLoad || (2f < Time.timeSinceLevelLoad && scores.tutorialLevel == true))
     	{
-            // save values to database/firebase
-            scores.submitToDB();
+    		if (!scores.freePlay)
+    		{
+            	// save values to database/firebase
+            	scores.submitToDB();
+			}
 			SceneManager.LoadScene("OutOfTime");
     	}
     

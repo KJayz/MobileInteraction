@@ -32,6 +32,12 @@ public class extraPagesFlow : MonoBehaviour
     
     public void OutOfTime()
     {
+		if (scores.freePlay)
+		{ 
+			SceneManager.LoadScene("FreePlay");
+			return;
+		}
+		
 		// return to main menu or go to questionnaires
 		if (scores.nrPlayedLevels == 3 || scores.nrPlayedLevels == 6)
 		{
@@ -42,7 +48,6 @@ public class extraPagesFlow : MonoBehaviour
     
     public void ThankYou()
     {
-    	// TODO: open main menu like screen with only free play buttons: one for swipe, one for tapping
-    	SceneManager.LoadScene("MainMenu"); 
+    	SceneManager.LoadScene("FreePlay"); 
     }
 }

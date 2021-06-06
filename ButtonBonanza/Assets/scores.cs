@@ -23,6 +23,7 @@ public class scores : MonoBehaviour
     static int poorlyTimedSwipes;
 
     public static bool tutorialLevel = false;
+    public static bool freePlay = false;
 
     // Start is called before the first frame update
     void Start()
