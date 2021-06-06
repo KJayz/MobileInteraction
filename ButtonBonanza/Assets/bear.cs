@@ -145,14 +145,16 @@ public class bear : MonoBehaviour
         if(GetComponent<Rigidbody>().velocity == Vector3.zero && !isMoving)
         {
             // If input or if no input in last 1s
-            if(input != 0 || lastInputTime + 1f < Time.time)
+            if(lastInputTime + 1f < Time.time)
             {
                 lastInputTime = Time.time;
-                lastInput = input;
+                lastInput = 0;
             }
         	// input.getkeys are kept, to be able to test easily on desktop
             if ((Input.GetKey("a") || input == 1) && lane >= 0)
             {
+                lastInput = 1;
+                lastInputTime = Time.time;
                 laneMovement = -1;
                 input = 0;
                 StartCoroutine(laneChange());
@@ -160,6 +162,8 @@ public class bear : MonoBehaviour
             
             if ((Input.GetKey("d") || input == 2) && lane <= 0)
             {
+                lastInput = 2;
+                lastInputTime = Time.time;
                 laneMovement = 1;
                 input = 0;
                 StartCoroutine(laneChange());
@@ -167,13 +171,17 @@ public class bear : MonoBehaviour
 
             if (Input.GetKey("w") || input == 3)
             {
-            	input = 0;
+                lastInput = 3;
+                lastInputTime = Time.time;
+                input = 0;
                 StartCoroutine(jump());
             }
             
             if (Input.GetKey("s") || input == 4)
             {
-            	input = 0;
+                lastInput = 4;
+                lastInputTime = Time.time;
+                input = 0;
 				StartCoroutine(duck());
 			}
         }

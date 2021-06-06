@@ -76,6 +76,10 @@ public class scores : MonoBehaviour
         playerHit = false;
         Debug.Log("Obstacle Type: " + obstacleType);
         //Debug.Log("Last Input: " + bearScript.lastInput);
+
+        Debug.Log("Obstacle Pos: " + obstaclePos);
+        Debug.Log("Bear Lane: " + bearScript.lane);
+        Debug.Log("Bear LastInput: " + bearScript.lastInput);
         if (bearScript.lane == obstaclePos && obstacleType + 3 == bearScript.lastInput)
         {
             poorlyTimedSwipes++;
