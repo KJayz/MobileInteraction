@@ -8,7 +8,8 @@ public class intuitiveness : MonoBehaviour
 {
 	public GameObject[] questionGroups; 
 	public int[] answers;
-	public Button submitButton;
+	public GameObject popupPanel;
+	public Button nextButton;
 	
 	HashSet<string> changedSliders = new HashSet<string>();
 
@@ -18,19 +19,18 @@ public class intuitiveness : MonoBehaviour
         answers = new int[questionGroups.Length];
     }
     
-    void Update() // to test
-    {
-    	if (changedSliders.Count == 6) submitButton.interactable = true;
-    }
-    
     public void SubmitRTLX()
     {
     	for (int i = 0; i < answers.Length; i++)
     	{
     		answers[i] = ReadAnswer(questionGroups[i]);
+    		if (changedSliders.Count != 6)
+            {
+				popupPanel.SetActive(true);
+                return;
+            }
     		
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
-    		
     		// save R-TLX results to firebase
     		// ... 
     	}
@@ -41,6 +41,7 @@ public class intuitiveness : MonoBehaviour
     public void UpdateSliderChanges(string name)
     {
     	changedSliders.Add(name);
+    	if (changedSliders.Count == 6) nextButton.GetComponent<Image>().color = new Color(0.6737718f,0.8622429f,0.9716981f);
     }
     
     int ReadAnswer(GameObject questionGroup)

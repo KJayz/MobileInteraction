@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -8,11 +9,12 @@ using UnityEngine.SceneManagement;
 // note: three similar submit-functions to make them more easy to add to database
 public class questions : MonoBehaviour
 {
+	public GameObject popupPanel;
+	public Button nextButton;
+	
 	public GameObject[] questionGroups; 
 	public string[] answers;
-	// public Text allQuestionsAnsweredText;
 
-    // Start is called before the first frame update
     void Start()
     {
         answers = new string[questionGroups.Length];
@@ -23,16 +25,13 @@ public class questions : MonoBehaviour
     	for (int i = 0; i < answers.Length; i++)
     	{
     		answers[i] = ReadAnswer(questionGroups[i]);
-    		
-    		/* if (answers[i] == "" || answers[i] == null)
+    		if (answers[i] == "" || answers[i] == null)
             {
-                Debug.Log("Empty Answer");
-                allQuestionsAnsweredText.gameObject.SetActive(true);
+				popupPanel.SetActive(true);
                 return;
-            } */	
+            }
     		
     		Debug.Log("Answer for question " + i + " is " + answers[i]);
-    		
     		// save demographics to firebase
     		// ... 
     	}
@@ -45,8 +44,13 @@ public class questions : MonoBehaviour
     	for (int i = 0; i < answers.Length; i++)
     	{
     		answers[i] = ReadAnswerLabels(questionGroups[i]);
+    		if (answers[i] == "" || answers[i] == null)
+            {
+				popupPanel.SetActive(true);
+                return;
+            }
+
     		Debug.Log("Answer to the question is " + answers[i]);
-    		
     		// save phone holding to firebase
     		// ... 
     	}
@@ -58,9 +62,14 @@ public class questions : MonoBehaviour
     {
     	for (int i = 0; i < answers.Length; i++)
     	{
-    		answers[i] = ReadAnswerLabels(questionGroups[i]).Substring(0,1);
-    		Debug.Log("Answer for question " + i + " is " + answers[i]);
-    		
+    		answers[i] = ReadAnswerLabels(questionGroups[i]);
+    		if (answers[i] == "" || answers[i] == null)
+            {
+				popupPanel.SetActive(true);
+                return;
+            }
+            
+    		Debug.Log("Answer for question " + i + " is " + answers[i].Substring(0,1));
     		// save first half of GEQ to firebase
     		// ... 
     	}
@@ -72,9 +81,14 @@ public class questions : MonoBehaviour
     {
     	for (int i = 0; i < answers.Length; i++)
     	{
-    		answers[i] = ReadAnswerLabels(questionGroups[i]).Substring(0,1);
-    		Debug.Log("Answer for question " + i + " is " + answers[i]);
-    		
+    		answers[i] = ReadAnswerLabels(questionGroups[i]);
+    		if (answers[i] == "" || answers[i] == null)
+            {
+				popupPanel.SetActive(true);
+                return;
+            }
+            
+    		Debug.Log("Answer for question " + i + " is " + answers[i].Substring(0,1));
     		// save second half of GEQ to firebase
     		// ... 
     	}
