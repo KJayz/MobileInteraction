@@ -27,8 +27,8 @@ public class MainMenu : MonoBehaviour
     
     void Awake()
     {
+        scores.inputMethod = PlayerPrefs.GetInt("inputMethod");
         nrPlayedLevels = PlayerPrefs.GetInt("nrPlayedLevels");
-        Debug.Log("nrPlayedLevels: "+ nrPlayedLevels);
         if (SceneManager.GetActiveScene().name != "MainMenu") return;
 		
         if (nrPlayedLevels %3 == 0)
@@ -54,12 +54,14 @@ public class MainMenu : MonoBehaviour
 	    if (nrPlayedLevels == 0 && !controlSet) 
 	    {
 	    	scores.inputMethod = (int) Mathf.Round(Random.Range(1f,2f));
-	    	LvlSelectText.text = "Level Select 1 of 2";
+            PlayerPrefs.SetInt("inputMethod", scores.inputMethod);
+            LvlSelectText.text = "Level Select 1 of 2";
 	    }
         else if (nrPlayedLevels == 3 && !controlSet) 
         {
         	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
-        	LvlSelectText.text = "Level Select 2 of 2";
+            PlayerPrefs.SetInt("inputMethod", scores.inputMethod);
+            LvlSelectText.text = "Level Select 2 of 2";
         }
     	if (scores.inputMethod == 1) 
     	{
