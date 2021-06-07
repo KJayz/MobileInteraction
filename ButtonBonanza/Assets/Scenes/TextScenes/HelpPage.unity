@@ -236,8 +236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275, y: -250}
-  m_SizeDelta: {x: 550, y: 500}
+  m_AnchoredPosition: {x: -275, y: -300}
+  m_SizeDelta: {x: 550, y: 600}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &371172557
 MonoBehaviour:
@@ -276,7 +276,9 @@ MonoBehaviour:
     some students from \nthe Utrecht University trying to get \nsome study points
     while having fun!\n\nSo, if you want, help us and yourself \nby <b>returning</b>
     to play the game, \nanswering some questions and finally enjoying your free game
-    play :)\n\nIf not, be assured you can always <b>quit</b> and remove this app. "
+    play :)\n\nIf not, be assured you can always <b>quit</b> and remove this app.
+    \n\nIf you just have a comments or questions \nfor us, please send a mail to:
+    teambuttonbonanza@gmail.com"
 --- !u!222 &371172558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -460,7 +462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275, y: 150}
+  m_AnchoredPosition: {x: -275, y: 200}
   m_SizeDelta: {x: 550, y: 200}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1114502833
@@ -616,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -150, y: 100}
+  m_AnchoredPosition: {x: -150, y: 75}
   m_SizeDelta: {x: 200, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1163190957
@@ -1056,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 175, y: 100}
+  m_AnchoredPosition: {x: 175, y: 75}
   m_SizeDelta: {x: 250, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968401120
@@ -1366,6 +1368,7 @@ MonoBehaviour:
   tutorialBtn: {fileID: 0}
   lvl1Btn: {fileID: 0}
   lvl2Btn: {fileID: 0}
+  LvlSelectText: {fileID: 0}
   InternetErrorText: {fileID: 0}
 --- !u!114 &2107264308
 MonoBehaviour:
