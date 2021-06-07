@@ -10,6 +10,7 @@ using Firebase.Extensions;
 public class MainMenu : MonoBehaviour
 {
 	public Button tutorialBtn, lvl1Btn, lvl2Btn;
+	public Text LvlSelectText;
     public Text InternetErrorText;
     int nrPlayedLevels;
 
@@ -49,8 +50,16 @@ public class MainMenu : MonoBehaviour
 	    }
 	    
 	    
-	    if (nrPlayedLevels == 0 && !controlSet) scores.inputMethod = (int) Mathf.Round(Random.Range(1f,2f));
-        else if (nrPlayedLevels == 3 && !controlSet) scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
+	    if (nrPlayedLevels == 0 && !controlSet) 
+	    {
+	    	scores.inputMethod = (int) Mathf.Round(Random.Range(1f,2f));
+	    	LvlSelectText.text = "Level Select 1 of 2";
+	    }
+        else if (nrPlayedLevels == 3 && !controlSet) 
+        {
+        	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
+        	LvlSelectText.text = "Level Select 2 of 2";
+        }
     	if (scores.inputMethod == 1) 
     	{
     		lvl1Btn.GetComponentInChildren<Text>().text = "Swiping 1";
@@ -85,10 +94,6 @@ public class MainMenu : MonoBehaviour
         		lvl2Btn.GetComponentInChildren<Text>().text = "Tapping 2";
         	}
         }
-        else if (nrPlayedLevels == 3) // tutorial + 2 levels
-        {
-        	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
-        } */
         
         
         if (level < 10)
