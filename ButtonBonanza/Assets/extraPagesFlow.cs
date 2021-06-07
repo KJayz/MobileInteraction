@@ -48,6 +48,7 @@ public class extraPagesFlow : MonoBehaviour
     
     public void ThankYou()
     {
+        PlayerPrefs.SetInt("FreePlay", 1);
     	SceneManager.LoadScene("FreePlay"); 
     }
 }
