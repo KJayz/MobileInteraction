@@ -83,10 +83,20 @@ public class MainMenu : MonoBehaviour
     {
 		SceneManager.LoadScene("HelpPage", LoadSceneMode.Additive);
     }
-
+    
     public void quit()
     {
-        Application.Quit();
+    	SceneManager.LoadScene("QuitPage", LoadSceneMode.Additive);
+    }
+    
+    public void undoQuit()
+    {
+    	SceneManager.UnloadSceneAsync("QuitPage");
+    }
+    
+    public void confirmQuit()
+    {
+    	Application.Quit();
     }
 
     private void HandleConnectedChanged(object sender, ValueChangedEventArgs e)
