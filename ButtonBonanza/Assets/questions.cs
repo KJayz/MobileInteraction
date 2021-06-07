@@ -79,7 +79,7 @@ public class questions : MonoBehaviour
     		// ... 
     	}
         saveToDB(answers);
-        SceneManager.LoadScene("Enjoyment1");
+        SceneManager.LoadScene("Intuitiveness");
     }
     
     public void SubmitGEQ1()
