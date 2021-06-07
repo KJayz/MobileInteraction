@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
 	public Button tutorialBtn, lvl1Btn, lvl2Btn;
     public Text InternetErrorText;
 
+	bool controlSet = false;
+
     void start()
     {
 
@@ -26,6 +28,7 @@ public class MainMenu : MonoBehaviour
 	{
 		if (SceneManager.GetActiveScene().name != "MainMenu") return;
 		
+		// set reachability of levels
         if (scores.nrPlayedLevels %3 == 0)
 	    {
 	    	tutorialBtn.interactable = true;
@@ -44,6 +47,22 @@ public class MainMenu : MonoBehaviour
 	    	lvl1Btn.interactable = false;
 	    	lvl2Btn.interactable = true;
 	    }
+	    
+	    
+	    Debug.Log("I am here!");
+	    if (scores.nrPlayedLevels == 0 && !controlSet) scores.inputMethod = (int) Mathf.Round(Random.Range(1f,2f));
+        else if (scores.nrPlayedLevels == 3 && !controlSet) scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
+    	if (scores.inputMethod == 1) 
+    	{
+    		lvl1Btn.GetComponentInChildren<Text>().text = "Swiping 1";
+    		lvl2Btn.GetComponentInChildren<Text>().text = "Swiping 2";
+    	}
+    	else if (scores.inputMethod == 2) 
+    	{
+    		lvl1Btn.GetComponentInChildren<Text>().text = "Tapping 1";
+    		lvl2Btn.GetComponentInChildren<Text>().text = "Tapping 2";
+    	}
+	    
 	}
 
 	public void loadLevel(int level)
@@ -53,14 +72,24 @@ public class MainMenu : MonoBehaviour
         
         if (scores.nrPlayedLevels == 0)
         {
-        	float controlType = Mathf.Round(Random.Range(1f,2f));
-        	if (controlType == 1) scores.inputMethod = 1;
-        	else if (controlType == 2) scores.inputMethod = 2;
+        	// float controlType = Mathf.Round(Random.Range(1f,2f));
+        	if (scores.inputMethod == 1) 
+        	{
+        		// scores.inputMethod = 1;
+        		lvl1Btn.GetComponentInChildren<Text>().text = "Swiping 1";
+        		lvl2Btn.GetComponentInChildren<Text>().text = "Swiping 2";
+        	}
+        	else if (scores.inputMethod == 2) 
+        	{
+        		// scores.inputMethod = 2;
+        		lvl1Btn.GetComponentInChildren<Text>().text = "Tapping 1";
+        		lvl2Btn.GetComponentInChildren<Text>().text = "Tapping 2";
+        	}
         }
-        else if (scores.nrPlayedLevels == 3) // tutorial + 2 levels
+        /* else if (scores.nrPlayedLevels == 3) // tutorial + 2 levels
         {
         	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
-        }
+        } */
         
         
         if (level < 10)

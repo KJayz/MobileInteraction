@@ -17,12 +17,6 @@
         {
             "deviceId": "ZY322HGW3W",
             "name": "com.DefaultCompany.ButtonBonanza",
-            "processId": 23000,
-            "exited": true
-        },
-        {
-            "deviceId": "ZY322HGW3W",
-            "name": "com.DefaultCompany.ButtonBonanza",
             "processId": 24496,
             "exited": true
         },
@@ -43,6 +37,18 @@
             "name": "com.DefaultCompany.ButtonBonanza",
             "processId": 25430,
             "exited": true
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.DefaultCompany.ButtonBonanza",
+            "processId": 5926,
+            "exited": true
+        },
+        {
+            "deviceId": "ZY322HGW3W",
+            "name": "com.whatsapp",
+            "processId": 6106,
+            "exited": false
         }
     ],
     "m_Tags": {
