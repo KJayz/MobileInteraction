@@ -2145,7 +2145,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1325463546}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.03125
+  m_Size: 0.068627454
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2583,8 +2583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2625}
-  m_SizeDelta: {x: 500, y: 5600}
+  m_AnchoredPosition: {x: 0, y: -2375}
+  m_SizeDelta: {x: 500, y: 5100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906060332
 MonoBehaviour:
@@ -2621,36 +2621,35 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "INFORMED CONSENT FORM (EN)\n\n<b>Title of the research:</b> Influence
     of game controls on performance and enjoyment of a mobile run-and-dodge game.\n\n<b>Goal
-    of the research:</b> This research is conducted by Evelien van Workum, Kwinten
-    Jacobs, Ana Patricia M\xE1rquez S\xE1nchez, Jorian Berkhout, Naomi Vogelpoel
-    and Alissa Vermast (all students from the University of Utrecht). You are hereby
-    invited to participate in this research. The goal of the research is to investigate
-    how different types of controls in a mobile game can influence performance and
-    enjoyment of the game. \n \n<b>Requirements:</b> To participate in this research,
-    you need access to a mobile phone powered by Android and therefore access to
-    the Google PlayStore. You are expected to have a stable internet connection during
-    the experiment. Please play this game in one go and play it in a place where
-    you will not be disturbed. \n \n<b>Procedure of the research:</b> After agreeing
-    to this informed consent form, we would like to ask you some general questions.
-    After this, you will play four levels of a simple run-and-dodge game. This includes
-    two levels with swipe controls, and two levels with button controls. Each level
-    will take 60 seconds. Before starting a level with a certain control scheme,
-    you will get an explanation and 20 seconds to try out the controls, before the
-    actual level starts. After each level, we would like you to answer some questions
-    about the level you just played. \n\nYou can hold your phone any way you would
-    like, as long as the phone is in portrait mode. As mentioned before, please play
-    this game in one go and play it in a place where you will not be disturbed. \n\n<b>Potential
-    risks:</b>\n* The experiment duration is kept short to avoid any possible discomfort
-    or mental strain.  You are allowed to take breaks between the game\u2019s levels
-    if necessary. \n* To protect your wellbeing (particularly regarding COVID-19), 
-    the experiments will be performed from a distance. You can do the experiment
-    in your own home, using your own phone, avoiding any physical interactions that
-    could harm your health. \n* There are no judicial or economical risks to participate
-    in this study. You do not have to answer questions that you do not want to answer.
-    Your participation is completely voluntary and you are allowed to quit at any
-    moment you like. If you choose to quit the study, your results and information
-    will be deleted and not used for the study. \n\n<b>Monetary compensation:</b>
-    You will not receive any monetary reward for participating in this research.\n\n<b>Confidentiality
+    of the research:</b> This research is conducted by six students from the University
+    of Utrecht. You are hereby invited to participate in this research. The goal
+    of the research is to investigate how different types of controls in a mobile
+    game can influence performance and enjoyment of the game. \n \n<b>Requirements:</b>
+    To participate in this research, you need access to a mobile phone powered by
+    Android and therefore access to the Google PlayStore. You are expected to have
+    a stable internet connection during the experiment. Please play this game in
+    one go and play it in a place where you will not be disturbed. \n \n<b>Procedure
+    of the research:</b> After agreeing to this informed consent form, we would like
+    to ask you some general questions. After this, you will play four levels of a
+    simple run-and-dodge game. This includes two levels with swipe controls, and
+    two levels with button controls. Each level will take 60 seconds. Before starting
+    a level with a certain control scheme, you will get an explanation and 20 seconds
+    to try out the controls, before the actual level starts. After each level, we
+    would like you to answer some questions about the level you just played. \n\nYou
+    can hold your phone any way you would like, as long as the phone is in portrait
+    mode. As mentioned before, please play this game in one go and play it in a place
+    where you will not be disturbed. \n\n<b>Potential risks:</b>\n* The experiment
+    duration is kept short to avoid any possible discomfort or mental strain.  You
+    are allowed to take breaks between the game\u2019s levels if necessary. \n* To
+    protect your wellbeing (particularly regarding COVID-19),  the experiments will
+    be performed from a distance. You can do the experiment in your own home, using
+    your own phone, avoiding any physical interactions that could harm your health.
+    \n* There are no judicial or economical risks to participate in this study. You
+    do not have to answer questions that you do not want to answer. Your participation
+    is completely voluntary and you are allowed to quit at any moment you like. If
+    you choose to quit the study, your results and information will be deleted and
+    not used for the study. \n\n<b>Monetary compensation:</b> You will not receive
+    any monetary reward for participating in this research.\n\n<b>Confidentiality
     of data:</b> Your privacy is and will be maximally protected. No confidential
     information or personal data will be disclosed or publicized in any way that
     will be retracable to you.\n* We will not ask for any information that is not
@@ -2669,29 +2668,26 @@ MonoBehaviour:
     to participate, then all your data will be protected in the ways described above.
     If you decide not to participate, if you have complaints, worries or want to
     get into contact with the researcher, please contact any of them using the following
-    information:    \n> Kwinten Jacobs: k.h.s.jacobs@students.uu.nl\n> Ana Patricia
-    M\xE1rquez S\xE1nchez: a.p.marquezsanchez@students.uu.nl\n> Alissa Vermast: a.vermast@students.uu.nl
-    \n> Jorian Berkhout: j.l.berkhout@uu.nl \n> Naomi Vogelpoel: n.j.f.vogelpoel@students.uu.nl\n>
-    Evelien van Workum: e.m.m.vanworkum@students.uu.nl\n\n<b>Declaration of consent:</b>
-    By signing this document I consent that I am properly informed about this study,
-    the way the data is collected, stored and processed and any potential risks that
-    are attached to my participation. In case I had any questions, I confirm that
-    I had the possibility to answer questions and that these have been answered satisfactorily
-    by signing this form. I confirm to participate on a completely voluntary basis.
-    The purpose of this document is to establish the terms of my participation in
-    this study.\n1. I have received a sufficient amount of information about this
-    study. The goal of my participation in this research is clear to me.\n2. My participation
-    in this study is voluntary. There is no explicit or implicit pressure for me
-    to participate in this study. \n3. My participation means I will spend approximately
-    20 minutes playing a mobile game and fill in the corresponding questionnaires.
-    I realize that I can quit my participation in this study at any time and I do
-    not have to provide any reasoning for doing so. \n4. I have a right to not answer
-    certain questions. If I feel uncomfortable during the experiment, I have the
-    right to stop my participation.\n5. The researchers have explicitly guaranteed
-    to anonymize my data and have promised that my data will not be traceable back
-    to me in any of the published materials. \n6. I have read and understood this
-    form. All my questions have been answered to my satisfaction and I participate
-    voluntarily. \n"
+    information:    \n> Team Button Bonanza: teambuttonbonanza@gmail.com\n\n<b>Declaration
+    of consent:</b> By signing this document I consent that I am properly informed
+    about this study, the way the data is collected, stored and processed and any
+    potential risks that are attached to my participation. In case I had any questions,
+    I confirm that I had the possibility to answer questions and that these have
+    been answered satisfactorily by signing this form. I confirm to participate on
+    a completely voluntary basis. The purpose of this document is to establish the
+    terms of my participation in this study.\n1. I have received a sufficient amount
+    of information about this study. The goal of my participation in this research
+    is clear to me.\n2. My participation in this study is voluntary. There is no
+    explicit or implicit pressure for me to participate in this study. \n3. My participation
+    means I will spend approximately 20 minutes playing a mobile game and fill in
+    the corresponding questionnaires. I realize that I can quit my participation
+    in this study at any time and I do not have to provide any reasoning for doing
+    so. \n4. I have a right to not answer certain questions. If I feel uncomfortable
+    during the experiment, I have the right to stop my participation.\n5. The researchers
+    have explicitly guaranteed to anonymize my data and have promised that my data
+    will not be traceable back to me in any of the published materials. \n6. I have
+    read and understood this form. All my questions have been answered to my satisfaction
+    and I participate voluntarily. \n"
 --- !u!222 &1906060333
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3129,6 +3125,7 @@ MonoBehaviour:
   tutorialBtn: {fileID: 0}
   lvl1Btn: {fileID: 0}
   lvl2Btn: {fileID: 0}
+  LvlSelectText: {fileID: 0}
   InternetErrorText: {fileID: 0}
 --- !u!1 &2133174238
 GameObject:
