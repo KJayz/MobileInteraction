@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
 
     void start()
     {
-        nrPlayedLevels = PlayerPrefs.GetInt("nrPlayedLevels");
     }
     
     void update()
@@ -27,8 +26,10 @@ public class MainMenu : MonoBehaviour
     }
     
     void Awake()
-	{
-		if (SceneManager.GetActiveScene().name != "MainMenu") return;
+    {
+        nrPlayedLevels = PlayerPrefs.GetInt("nrPlayedLevels");
+        Debug.Log("nrPlayedLevels: "+ nrPlayedLevels);
+        if (SceneManager.GetActiveScene().name != "MainMenu") return;
 		
         if (nrPlayedLevels %3 == 0)
 	    {
@@ -74,7 +75,8 @@ public class MainMenu : MonoBehaviour
 	}
 
 	public void loadLevel(int level)
-	{
+    {
+        nrPlayedLevels = PlayerPrefs.GetInt("nrPlayedLevels");
         PlayerPrefs.SetInt("randomSeed", level);      
         Debug.Log("Loading level: " + level);   
         
@@ -94,8 +96,9 @@ public class MainMenu : MonoBehaviour
         		lvl2Btn.GetComponentInChildren<Text>().text = "Tapping 2";
         	}
         }
-        
-        
+        nrPlayedLevels++;
+        PlayerPrefs.SetInt("nrPlayedLevels", nrPlayedLevels);
+
         if (level < 10)
         {
             scores.tutorialLevel = false;		    
@@ -109,7 +112,6 @@ public class MainMenu : MonoBehaviour
             else SceneManager.LoadScene("TutorialScene"); // default
         }
 
-        PlayerPrefs.SetInt("nrPlayedLevels", nrPlayedLevels++);
 	}
 
     public void openHelp()

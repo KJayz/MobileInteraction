@@ -40,7 +40,13 @@ public class consent : MonoBehaviour
     	}
     	else
     	{
-    		SceneManager.LoadScene("Demographics");
+            if(PlayerPrefs.GetInt("nrPlayedLevels") != 0)
+            {
+                SceneManager.LoadScene("MainMenu");
+            } else
+            {
+                SceneManager.LoadScene("Demographics");
+            }
     	}
     }
 }
