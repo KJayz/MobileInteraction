@@ -60,8 +60,6 @@ public class bear : MonoBehaviour
             timeSinceSpeedup = Time.time;
         }
 
-        // Reset position & speed, if bear's position too low or too much to one of the sizes
-        resetPosition();
 
 		// understand user's input if swiping condition
 		if (scores.inputMethod == 1)
@@ -71,6 +69,9 @@ public class bear : MonoBehaviour
 
 		// respond to user's input
         respondToInput();
+
+        // Reset position & speed, if bear's position too low or too much to one of the sizes
+        resetPosition();
     }
     
     
@@ -80,14 +81,6 @@ public class bear : MonoBehaviour
     	if (transform.position.y < 0.5f)
         {
             transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            Debug.Log("Reset pos");
-        }
-        
-        // reset pos for lanes, to keep the lanes discrete
-        if (transform.position.x < -1f || transform.position.x > 1f) 
-        {
-            transform.position = new Vector3((float)lane, transform.position.y, transform.position.z);
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             Debug.Log("Reset pos");
         }
@@ -215,6 +208,10 @@ public class bear : MonoBehaviour
         yield return new WaitForSeconds(1 / (strafeSpeed*3));
         GetComponent<MeshRenderer>().material = bearMat;
         isMoving = false;
+
+        transform.position = new Vector3((float)lane, transform.position.y, transform.position.z);
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Debug.Log("Reset pos");
     }
     
     IEnumerator jump()
@@ -239,7 +236,7 @@ public class bear : MonoBehaviour
         isMoving = true;
         // bear starts ducking
         GetComponent<MeshRenderer>().material = bearDuckMat;
-        GetComponent<BoxCollider>().size = new Vector3(8,0.075f,4.5f);
+        GetComponent<BoxCollider>().size = new Vector3(8,0.075f,2.5f);
         GetComponent<BoxCollider>().center = new Vector3(0,0,2.7f);
         yield return new WaitForSeconds(1.5f / duckSpeed);
         
