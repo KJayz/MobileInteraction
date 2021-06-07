@@ -128,7 +128,7 @@ public class bear : MonoBehaviour
             	}
             }
             
-            if (touch.phase == TouchPhase.Ended) startTouchPos = new Touch().position;
+            //if (touch.phase == TouchPhase.Ended) startTouchPos = new Touch().position;
         }
     }
     
@@ -148,7 +148,6 @@ public class bear : MonoBehaviour
                 lastInput = 1;
                 lastInputTime = Time.time;
                 laneMovement = -1;
-                input = 0;
                 StartCoroutine(laneChange());
             }
             
@@ -157,7 +156,6 @@ public class bear : MonoBehaviour
                 lastInput = 2;
                 lastInputTime = Time.time;
                 laneMovement = 1;
-                input = 0;
                 StartCoroutine(laneChange());
             }
 
@@ -165,7 +163,6 @@ public class bear : MonoBehaviour
             {
                 lastInput = 3;
                 lastInputTime = Time.time;
-                input = 0;
                 StartCoroutine(jump());
             }
             
@@ -173,10 +170,10 @@ public class bear : MonoBehaviour
             {
                 lastInput = 4;
                 lastInputTime = Time.time;
-                input = 0;
 				StartCoroutine(duck());
 			}
         }
+        input = 0;
     }
     
     IEnumerator laneChange()
