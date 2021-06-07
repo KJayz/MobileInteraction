@@ -24,7 +24,7 @@ public class surface : MonoBehaviour
         hangingButtons = transform.GetChild(1).gameObject;
         wall1 = transform.GetChild(2).gameObject;
         wall2 = transform.GetChild(3).gameObject;
-        velocity = new Vector3(0,0,2.5f);
+        velocity = new Vector3(0,0,3f);
         // Hide obstacles (so the player isn't stuck in the middle when starting the game)
         setObstacleVisible(false);
         Random.InitState(PlayerPrefs.GetInt("randomSeed"));
@@ -50,7 +50,7 @@ public class surface : MonoBehaviour
         if(timeSinceSpeedup + 20f < Time.time)
         {
             // TODO: Test level & bear speeds and see which speedup rate is best for both
-            velocity += new Vector3(0, 0, velocity.z * 0.10f); // Verify if this speedup is doable - percentile increase so bear speed can increase at the same rate
+            velocity += new Vector3(0, 0, velocity.z * 0.30f); // Verify if this speedup is doable - percentile increase so bear speed can increase at the same rate
             timeSinceSpeedup = Time.time;
         }
         if (transform.position.z < 0.5f && addPoints) // After the bear passes the obstacles

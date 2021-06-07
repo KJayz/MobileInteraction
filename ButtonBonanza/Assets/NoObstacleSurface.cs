@@ -11,7 +11,7 @@ public class NoObstacleSurface : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velocity = new Vector3(0, 0, 2.5f);
+        velocity = new Vector3(0, 0, 3f);
         timeSinceSpeedup = Time.timeSinceLevelLoad;
     }
 
@@ -22,7 +22,7 @@ public class NoObstacleSurface : MonoBehaviour
         if (timeSinceSpeedup + 20f < Time.time)
         {
             // TODO: Test level & bear speeds and see which speedup rate is best for both
-            velocity += new Vector3(0, 0, velocity.z * 0.10f); // Verify if this speedup is doable - percentile increase so bear speed can increase at the same rate
+            velocity += new Vector3(0, 0, velocity.z * 0.30f); // Verify if this speedup is doable - percentile increase so bear speed can increase at the same rate
             timeSinceSpeedup = Time.time;
         }
         transform.position -= velocity * Time.deltaTime;

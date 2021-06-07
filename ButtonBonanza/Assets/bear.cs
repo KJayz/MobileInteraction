@@ -37,7 +37,7 @@ public class bear : MonoBehaviour
         lastInputTime = Time.timeSinceLevelLoad;
         lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
     	input = 0; // (0 = none, 1 = left, 2 = right, 3 = up, 4 = down)
-    	duckSpeed = 0.75f*speed;
+    	duckSpeed = 1f*speed;
     	jumpSpeed = 1f*speed;
     	strafeSpeed = 2*speed;
     	
@@ -54,9 +54,9 @@ public class bear : MonoBehaviour
         // Speedup every 20s - if the level is faster, the bear needs to be able to do the same
         if (timeSinceSpeedup + 20f < Time.time)
         {
-            strafeSpeed += strafeSpeed * 0.10f;
-            jumpSpeed += jumpSpeed * 0.10f;
-            duckSpeed += duckSpeed * 0.10f;
+            strafeSpeed += strafeSpeed * 0.30f;
+            jumpSpeed += jumpSpeed * 0.30f;
+            duckSpeed += duckSpeed * 0.30f;
             timeSinceSpeedup = Time.time;
         }
 
@@ -216,13 +216,13 @@ public class bear : MonoBehaviour
         isMoving = true;
         //bear starts jumping
         GetComponent<MeshRenderer>().material = bearJumpMat;
-        GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.up;
+        GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.up * 1.5f;
     	GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity - jumpSpeed * Vector3.up * Time.deltaTime;
     	yield return new WaitWhile(() => transform.position.y < 1.5f);
 
         //bear starts moving notmally again
         GetComponent<MeshRenderer>().material = bearMat;
-    	GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.down;
+    	GetComponent<Rigidbody>().velocity = jumpSpeed * Vector3.down * 2f;
     	GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity + jumpSpeed * Vector3.down * Time.deltaTime; 
     	yield return new WaitWhile(() => transform.position.y > 0.5f);
         isMoving = false;
