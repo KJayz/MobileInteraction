@@ -49,9 +49,8 @@ public class MainMenu : MonoBehaviour
 	    }
 	    
 	    
-	    Debug.Log("I am here!");
-	    if (scores.nrPlayedLevels == 0 && !controlSet) scores.inputMethod = (int) Mathf.Round(Random.Range(1f,2f));
-        else if (scores.nrPlayedLevels == 3 && !controlSet) scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
+	    if (nrPlayedLevels == 0 && !controlSet) scores.inputMethod = (int) Mathf.Round(Random.Range(1f,2f));
+        else if (nrPlayedLevels == 3 && !controlSet) scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
     	if (scores.inputMethod == 1) 
     	{
     		lvl1Btn.GetComponentInChildren<Text>().text = "Swiping 1";
