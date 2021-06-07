@@ -85,10 +85,6 @@ public class MainMenu : MonoBehaviour
         		lvl2Btn.GetComponentInChildren<Text>().text = "Tapping 2";
         	}
         }
-        else if (nrPlayedLevels == 3) // tutorial + 2 levels
-        {
-        	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
-        } */
         
         
         if (level < 10)
