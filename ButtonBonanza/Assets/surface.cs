@@ -36,7 +36,7 @@ public class surface : MonoBehaviour
     void Update()
     {
     	// end game after one minute
-    	if (6f < Time.timeSinceLevelLoad || (2f < Time.timeSinceLevelLoad && scores.tutorialLevel == true))
+    	if (scores.obstacleCount == 24 || (scores.obstacleCount == 8 && scores.tutorialLevel == true))
     	{
     		if (!scores.freePlay)
     		{
@@ -58,6 +58,7 @@ public class surface : MonoBehaviour
             scores.updateScore(obstaclePos, obstacleType);
             Debug.Log("Player score: " + scores.playerScore);
             addPoints = false;
+            scores.obstacleCount++;
         }
 
         transform.position -= velocity*Time.deltaTime;
