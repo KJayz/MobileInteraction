@@ -37,8 +37,8 @@ public class bear : MonoBehaviour
         lastInputTime = Time.timeSinceLevelLoad;
         lane = 0; // (negative = left lane, 0 = middle lane, positive = right lane)
     	input = 0; // (0 = none, 1 = left, 2 = right, 3 = up, 4 = down)
-    	duckSpeed = speed;
-    	jumpSpeed = 1.5f*speed;
+    	duckSpeed = 0.75f*speed;
+    	jumpSpeed = 1f*speed;
     	strafeSpeed = 2*speed;
     	
     	if (scores.inputMethod == 2) // add buttons if tapping condition
@@ -66,7 +66,6 @@ public class bear : MonoBehaviour
 		// understand user's input if swiping condition
 		if (scores.inputMethod == 1)
 		{
-			duckSpeed = 2*speed; // Why change the duckspeed?
 			listenForSwipes();
 		}
 
