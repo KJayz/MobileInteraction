@@ -10,6 +10,7 @@ public class scores : MonoBehaviour
     static bear bearScript;
 
 	public static int playerScore; // 10 points for obstacles dodged, 0 points for obstacles hit
+    public static int obstacleCount;
 	
 	public static int inputMethod; // (1 = swiping, 2 = tapping virtual buttons)
 	public static int nrPlayedLevels = 0;
@@ -34,6 +35,7 @@ public class scores : MonoBehaviour
         incorrectSwipes = 0;
         missedSwipes = 0;
         poorlyTimedSwipes = 0;
+        obstacleCount = 0;
         timeSinceLevelLoad = Time.timeSinceLevelLoad;
     }
 
