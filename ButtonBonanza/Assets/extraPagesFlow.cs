@@ -37,9 +37,9 @@ public class extraPagesFlow : MonoBehaviour
 			SceneManager.LoadScene("FreePlay");
 			return;
 		}
-		
+        int nrPlayedLevels = PlayerPrefs.GetInt("nrPlayedLevels");
 		// return to main menu or go to questionnaires
-		if (scores.nrPlayedLevels == 3 || scores.nrPlayedLevels == 6)
+		if (nrPlayedLevels == 3 || nrPlayedLevels == 6)
 		{
 			SceneManager.LoadScene("HoldingPhone");
 		}

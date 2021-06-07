@@ -11,10 +11,11 @@ public class MainMenu : MonoBehaviour
 {
 	public Button tutorialBtn, lvl1Btn, lvl2Btn;
     public Text InternetErrorText;
+    int nrPlayedLevels;
 
     void start()
     {
-
+        nrPlayedLevels = PlayerPrefs.GetInt("nrPlayedLevels");
     }
     
     void update()
@@ -26,19 +27,19 @@ public class MainMenu : MonoBehaviour
 	{
 		if (SceneManager.GetActiveScene().name != "MainMenu") return;
 		
-        if (scores.nrPlayedLevels %3 == 0)
+        if (nrPlayedLevels %3 == 0)
 	    {
 	    	tutorialBtn.interactable = true;
 	    	lvl1Btn.interactable = false;
 	    	lvl2Btn.interactable = false;
 	    }
-	    else if (scores.nrPlayedLevels %3 == 1)
+	    else if (nrPlayedLevels %3 == 1)
 	    {
 	    	tutorialBtn.interactable = false;
 	    	lvl1Btn.interactable = true;
 	    	lvl2Btn.interactable = false;
 	    } 
-	    else if (scores.nrPlayedLevels %3 == 2)
+	    else if (nrPlayedLevels %3 == 2)
 	    {
 	    	tutorialBtn.interactable = false;
 	    	lvl1Btn.interactable = false;
@@ -51,13 +52,13 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("randomSeed", level);      
         Debug.Log("Loading level: " + level);   
         
-        if (scores.nrPlayedLevels == 0)
+        if (nrPlayedLevels == 0)
         {
         	float controlType = Mathf.Round(Random.Range(1f,2f));
         	if (controlType == 1) scores.inputMethod = 1;
         	else if (controlType == 2) scores.inputMethod = 2;
         }
-        else if (scores.nrPlayedLevels == 3) // tutorial + 2 levels
+        else if (nrPlayedLevels == 3) // tutorial + 2 levels
         {
         	scores.inputMethod = 3 - scores.inputMethod; // 1 -> 2, 2 -> 1
         }
@@ -75,8 +76,8 @@ public class MainMenu : MonoBehaviour
             else if (scores.inputMethod == 2) SceneManager.LoadScene("VirtBtnExpl");
             else SceneManager.LoadScene("TutorialScene"); // default
         }
-        
-        scores.nrPlayedLevels += 1;
+
+        PlayerPrefs.SetInt("nrPlayedLevels", nrPlayedLevels++);
 	}
 
     public void openHelp()

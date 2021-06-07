@@ -118,7 +118,7 @@ public class questions : MonoBehaviour
     	}
         saveToDB(answers);
     	
-    	if (scores.nrPlayedLevels == 6) SceneManager.LoadScene("ThankYou");
+    	if (PlayerPrefs.GetInt("nrPlayedLevels") == 6) SceneManager.LoadScene("ThankYou");
 		else SceneManager.LoadScene("MainMenu");
     }
     

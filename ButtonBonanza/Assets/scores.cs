@@ -13,7 +13,6 @@ public class scores : MonoBehaviour
     public static int obstacleCount;
 	
 	public static int inputMethod; // (1 = swiping, 2 = tapping virtual buttons)
-	public static int nrPlayedLevels = 0;
     public static float timeSinceLevelLoad;
 
     public static bool playerHit = false;
